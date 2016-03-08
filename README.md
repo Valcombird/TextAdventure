@@ -5,3 +5,6 @@ Uhhh this isn't complete, and might never be. I am just simply figuring out what
 Hoping to learn more than I do. 
 
 Thanks for looking I guess.
+
+3/8
+Started. Got nothing done really because ran into common errors. Got a somewhat basic class system working? Maybe.
