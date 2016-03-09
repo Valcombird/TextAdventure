@@ -1,21 +1,17 @@
-// TextAdventure.cpp : Defines the entry point for the console application.
-//
-
 #include "stdafx.h"
-#include <iostream>
 #include "Entity.h"
-#include "Adventure.h"
 #include "Classes.h"
 
-using namespace std;
+#include <iostream>
 
-Entity misc;
-extern Adventure advent;
+
+
+extern Entity misc;
 extern Classes gameClasses;
 
 int main()
 {
-	advent.startAdvent();
+	gameClasses.theQuestion();
     return 0;
 }
 
