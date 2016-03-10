@@ -7,14 +7,11 @@
 
 
 extern Entity misc;
-Classes gameClasses;
+extern Classes gameClasses;
 
 int main()
 {
-	//gameClasses.theQuestion();
-	int x;
-	std::cin >> x;
-	misc.path(x);
+	gameClasses.theQuestion();
     return 0;
 }
 

@@ -12,7 +12,8 @@ public:
 	int& playerHp = classHp;
 	void chooseClass(int numClass);
 	void theQuestion();
+	void beginAdventure();
 private:
-
+	std::string theAnswer;
 };
 

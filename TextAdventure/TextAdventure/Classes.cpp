@@ -27,8 +27,24 @@ void Classes::theQuestion() {
 		chooseClass(0);
 	else if (chosenClass == "archer" || chosenClass == "Archer")
 		chooseClass(1);
-	else
+	else {
 		std::cout << "Something went wrong" << std::endl;
+		theQuestion();
+	}
+		
+}
+
+void Classes::beginAdventure() {
+	std::cout << "Are you prepared to begin your adventure? ";
+	getline(std::cin, theAnswer);
+	if (theAnswer == "Yes" || theAnswer == "yes")
+		misc.entrance();
+	else if (theAnswer == "No" || theAnswer == "no")
+		misc.pit();
+	else {
+		std::cout << "Something went wrong" << std::endl;
+		beginAdventure();
+	}
 }
 
 void Classes::chooseClass(int numClass) {
@@ -41,7 +57,7 @@ void Classes::chooseClass(int numClass) {
 		std::cout << playerHp << std::endl;
 		std::cout << playerAtt << std::endl;
 		std::cout << name << std::endl;
-		misc.path(1);
+		beginAdventure();
 		break;
 	case 1: //archer
 		std::cout << "You have chosen " << chosenClass << std::endl;
@@ -51,7 +67,7 @@ void Classes::chooseClass(int numClass) {
 		std::cout << playerHp << std::endl;
 		std::cout << playerAtt << std::endl;
 		std::cout << playerClassName << std::endl;
-		misc.path(1);
+		beginAdventure();
 		break;
 	}
 }
