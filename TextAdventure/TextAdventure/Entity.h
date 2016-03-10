@@ -6,5 +6,6 @@ public:
 	~Entity();
 	void door();
 	void room();
+	void path(int i);
 };
 

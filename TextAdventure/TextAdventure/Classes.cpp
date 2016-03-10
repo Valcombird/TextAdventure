@@ -1,12 +1,15 @@
 #include "stdafx.h"
 #include "Classes.h"
+#include "Entity.h"
 
 #include <iostream>
 #include <string>
-#include <sstream>
 #include <vector>
 
+Entity misc;
+
 std::string chosenClass;
+std::string& playerClassName = chosenClass;
 
 Classes::Classes()
 {
@@ -32,15 +35,23 @@ void Classes::chooseClass(int numClass) {
 	switch (numClass) {
 	case 0: //warrior
 		std::cout << "You have chosen " << chosenClass << std::endl;
-		std::cout << playerClassHP << std::endl;
-		std::cout << playerClassAtt << std::endl;
-		/*std::cout << playerClassName << std::endl;*/
+		classHp = 100;
+		classAtt = 60;
+		name = "Warrior";
+		std::cout << playerHp << std::endl;
+		std::cout << playerAtt << std::endl;
+		std::cout << name << std::endl;
+		misc.path(1);
 		break;
 	case 1: //archer
 		std::cout << "You have chosen " << chosenClass << std::endl;
-		std::cout << playerClassHP << std::endl;
-		std::cout << playerClassAtt << std::endl;
-		/*std::cout << playerClassName << std::endl;*/
+		classHp = 80;
+		classAtt = 90;
+		name = "Archer";
+		std::cout << playerHp << std::endl;
+		std::cout << playerAtt << std::endl;
+		std::cout << playerClassName << std::endl;
+		misc.path(1);
 		break;
 	}
 }

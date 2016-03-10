@@ -145,7 +145,6 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Adventure.h" />
     <ClInclude Include="Classes.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="resource.h" />
@@ -153,7 +152,6 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Adventure.cpp" />
     <ClCompile Include="Classes.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="stdafx.cpp">
