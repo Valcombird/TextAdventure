@@ -1,12 +1,16 @@
 #include "stdafx.h"
 #include "Entity.h"
 #include "Classes.h"
+#include "DoorHandler.h"
+#include "RoomHandler.h"
 
 #include <iostream>
 #include <vector>
 #include <string>
 
 Classes gameClasses;
+extern DoorHandler door;
+extern RoomHandler room;
 
 std::vector<int> aPath;
 std::vector<std::string> pathName;
@@ -25,7 +29,7 @@ void Entity::entrance() {
 	getline(std::cin, theAnswer);
 	if (theAnswer == "Yes" || theAnswer == "yes") {
 		std::cout << "You have successfully entered the dungeon" << "\n";
-		door();
+		door.door();
 	}
 	else if (theAnswer == "No" || theAnswer == "no")
 		pit();
@@ -35,32 +39,12 @@ void Entity::entrance() {
 	}
 }
 
-void Entity::door() {
-	std::cout << "You come across a door" << std::endl;
-	std::cout << "Do you open the door? ";
-	getline(std::cin, theAnswer);
-	if (theAnswer == "Yes" || theAnswer == "yes")
-		room();
-	else if (theAnswer == "No" || theAnswer == "no")
-		pit();
-	else {
-		std::cout << "Something went wrong" << std::endl;
-		door();
-	}
-}
-
-void Entity::room() {
-	std::cout << "You walk into the room" << std::endl;
-	std::cout << "What do you wish to do? ";
-	//search, move on, ect.
-}
-
 void Entity::pit() {
 	std::cout << "You fall into a pit -- Game Over" << std::endl;
 	std::cout << "Do you wish to start over? ";
 	getline(std::cin, theAnswer);
 	if (theAnswer == "Yes" || theAnswer == "yes")
-		gameClasses.chooseClass();
+		gameClasses.theQuestion();
 	else if (theAnswer == "No" || theAnswer == "no")
 		std::cout << "The game is now officially over" << std::endl;
 	else {

@@ -20,6 +20,12 @@ Classes::~Classes()
 {
 }
 
+void Classes::displayInfo() {
+	std::cout << playerHp << std::endl;
+	std::cout << playerAtt << std::endl;
+	std::cout << name << std::endl;
+}
+
 void Classes::theQuestion() {
 	std::cout << "Which class? (Warrior or Archer) ";
 	getline(std::cin, chosenClass);
@@ -52,21 +58,17 @@ void Classes::chooseClass(int numClass) {
 	case 0: //warrior
 		std::cout << "You have chosen " << chosenClass << std::endl;
 		classHp = 100;
-		classAtt = 60;
+		classAtt = 6;
 		name = "Warrior";
-		std::cout << playerHp << std::endl;
-		std::cout << playerAtt << std::endl;
-		std::cout << name << std::endl;
+		displayInfo();
 		beginAdventure();
 		break;
 	case 1: //archer
 		std::cout << "You have chosen " << chosenClass << std::endl;
 		classHp = 80;
-		classAtt = 90;
+		classAtt = 9;
 		name = "Archer";
-		std::cout << playerHp << std::endl;
-		std::cout << playerAtt << std::endl;
-		std::cout << playerClassName << std::endl;
+		displayInfo();
 		beginAdventure();
 		break;
 	}

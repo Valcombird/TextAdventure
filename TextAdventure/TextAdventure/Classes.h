@@ -13,6 +13,7 @@ public:
 	void chooseClass(int numClass);
 	void theQuestion();
 	void beginAdventure();
+	void displayInfo();
 private:
 	std::string theAnswer;
 };
