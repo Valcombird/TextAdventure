@@ -2,13 +2,16 @@
 #include "RoomHandler.h"
 #include "Entity.h"
 #include "DoorHandler.h"
+#include "Pathing.h"
 
 #include <iostream>
 #include <string>
 #include <vector>
+#include <time.h>
 
 DoorHandler door;
 extern Entity misc;
+Pathing path;
 
 std::vector<int> optionsNum;
 std::vector<std::string> options;
@@ -23,20 +26,23 @@ RoomHandler::~RoomHandler()
 }
 
 void RoomHandler::search(int i) {
+	srand(static_cast<unsigned int>(time(NULL)));
 	/*int& optionsHandler = optionsNum[i];
 	options.push_back("Search");
 	options.push_back("Move on");*/
 	switch (i) {
 	case 0:
-		std::cout << "Case 0";
+		std::cout << "You found nothing -- Case 0" << "\n";
+		//door.door();
 		room();
 		break;
 	case 1:
-		std::cout << "Case 1";
-		room();
+		std::cout << "You found something -- Case 1" << "\n";
+		path.choosePath(rand() % 7);
 		break;
 	case 2:
-		std::cout << "Case 2";
+		std::cout << "You found everything -- Case 2" << "\n";
+		//door.door();
 		room();
 		break;
 	}
@@ -47,6 +53,7 @@ void RoomHandler::moveOn() {
 }
 
 void RoomHandler::room() {
+	srand(static_cast<unsigned int>(time(NULL)));
 	std::cout << "You walk into the room" << std::endl;
 	std::cout << "What do you wish to do? (Search, Move on) ";
 	getline(std::cin, theAnswer);

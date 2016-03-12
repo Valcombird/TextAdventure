@@ -2,6 +2,7 @@
 #include "Entity.h"
 #include "Classes.h"
 #include "RoomHandler.h"
+#include <time.h>
 
 #include <iostream>
 
