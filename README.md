@@ -6,6 +6,16 @@ Hoping to learn more than I do.
 
 Thanks for looking I guess.
 
+3/11
+Pathing
+<ul>
+  <li>RNG based (not really)</li>
+  <li>Trap system initialized</li>
+  <li>Switches versus maps/factories still considering</li>
+  <li>HP system integration for traps (for now)</li>
+</ul>
+That's about it... Oh and realized I could use HTML in this.. Going to leave the rest sloppy to show I do it on this day.
+
 3/10
 DoorHandler
   Open the door...
