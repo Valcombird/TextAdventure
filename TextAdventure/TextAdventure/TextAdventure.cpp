@@ -13,6 +13,7 @@ extern RoomHandler room;
 int main()
 {
 	//gameClasses.theQuestion();
+	gameClasses.playerHp = 100;
 	room.room();
     return 0;
 }

@@ -38,12 +38,16 @@ void RoomHandler::search(int i) {
 		break;
 	case 1:
 		std::cout << "You found something -- Case 1" << "\n";
-		path.choosePath(rand() % 7);
+		path.pathQuestion();
 		break;
 	case 2:
 		std::cout << "You found everything -- Case 2" << "\n";
 		//door.door();
 		room();
+		break;
+	case 3:
+		std::cout << "You found something -- Case 1" << "\n";
+		path.pathQuestion2();
 		break;
 	}
 }
