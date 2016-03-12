@@ -6,6 +6,14 @@ Hoping to learn more than I do.
 
 Thanks for looking I guess.
 
+3/10
+DoorHandler
+  Open the door...
+RoomHandler
+  Random number = random encounter
+CombatHandler
+  In progress
+
 3/9
 Decided on vectors.
 Got class system working even more.
