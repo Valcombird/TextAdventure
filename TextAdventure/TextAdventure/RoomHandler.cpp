@@ -13,9 +13,6 @@ DoorHandler door;
 extern Entity misc;
 Pathing path;
 
-std::vector<int> optionsNum;
-std::vector<std::string> options;
-
 RoomHandler::RoomHandler()
 {
 }
@@ -25,9 +22,6 @@ RoomHandler::~RoomHandler()
 {
 }
 
-/*int& optionsHandler = optionsNum[i];
-options.push_back("Search");
-options.push_back("Move on");*/
 void RoomHandler::search(int i) {
 	srand(static_cast<unsigned int>(time(NULL)));
 	switch (i) {
@@ -51,6 +45,7 @@ void RoomHandler::search(int i) {
 }
 
 void RoomHandler::moveOn(int i) {
+	srand(static_cast<unsigned int>(time(NULL)));
 	switch (i) {
 	case 0: //2 path question
 		path.pathQuestion();

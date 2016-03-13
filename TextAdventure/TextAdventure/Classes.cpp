@@ -57,12 +57,14 @@ void Classes::beginAdventure() {
 }
 
 void Classes::chooseClass(int numClass) {
+	classNum = numClass;
 	switch (numClass) {
 	case 0: //warrior
 		std::cout << "You have chosen " << chosenClass << std::endl;
 		maxHp = 100;
 		classHp = 100;
-		classAtt = 6;
+		classAtt = 4;
+		classDef = 9;
 		name = "Warrior";
 		displayInfo();
 		beginAdventure();
@@ -72,10 +74,23 @@ void Classes::chooseClass(int numClass) {
 		maxHp = 80;
 		classHp = 80;
 		classAtt = 9;
+		classDef = 4;
 		name = "Archer";
 		displayInfo();
 		beginAdventure();
 		break;
+	}
+}
+
+void Classes::levelUp() {
+	if (classNum == 0) {
+		maxHp += 25;
+		playerAtt += 1;
+		playerDef += 2;
+	} else if (classNum == 1) {
+		maxHp += 15;
+		playerAtt += 2;
+		playerDef += 1;
 	}
 }
 

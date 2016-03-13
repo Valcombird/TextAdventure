@@ -63,7 +63,9 @@ void Entity::encounter(int i) {
 }
 
 void Entity::takeAction() {
+	srand(static_cast<unsigned int>(time(NULL)));
 	std::cout << "Take an action: (Move on) ";
+	getline(std::cin, theAnswer);
 	if (theAnswer == "Move on" || theAnswer == "move on")
 		room.moveOn(rand() % 4);
 	else {
