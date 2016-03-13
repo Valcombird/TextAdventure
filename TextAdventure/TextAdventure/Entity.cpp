@@ -3,14 +3,16 @@
 #include "Classes.h"
 #include "DoorHandler.h"
 #include "RoomHandler.h"
+#include "NPC.h"
 
 #include <iostream>
 #include <vector>
 #include <string>
 
-Classes gameClasses;
+extern Classes gameClasses;
 extern DoorHandler door;
 extern RoomHandler room;
+NPC npc;
 
 std::vector<int> aPath;
 std::vector<std::string> pathName;
@@ -53,20 +55,21 @@ void Entity::pit() {
 	}
 }
 
-void Entity::path(int i) {
+void Entity::encounter(int i) {
+	npc.setStats(i);
+	std::cout << "You have encounterd " << npc.npcName << "\n";
+	npc.displayInfo();
+	takeAction();
+}
 
-	/*aPath.push_back(1);
-	aPath.push_back(100);
-	pathName.push_back("Test");
-	int& truePath = aPath[i];
-	switch (i) {
-	case 0: 
-		std::cout << aPath[i] << "\n";
-		std::cout << pathName[i] << "\n";
-		break;
-	case 1:
-		std::cout << aPath[i] << "\n";
-		std::cout << pathName[i] << "\n";
-		break;
-	}*/
+void Entity::takeAction() {
+	srand(static_cast<unsigned int>(time(NULL)));
+	std::cout << "Take an action: (Move on) ";
+	getline(std::cin, theAnswer);
+	if (theAnswer == "Move on" || theAnswer == "move on")
+		room.moveOn(rand() % 4);
+	else {
+		std::cout << "Something went wrong" << std::endl;
+		takeAction();
+	}
 }
