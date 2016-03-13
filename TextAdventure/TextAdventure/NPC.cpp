@@ -95,6 +95,10 @@ void NPC::displayInfo() {
 	std::cout << npcHp << "\n";
 }
 
+void NPC::death() {
+
+}
+
 
 
 //void Goblin::displayStats() {

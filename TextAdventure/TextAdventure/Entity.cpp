@@ -73,3 +73,17 @@ void Entity::takeAction() {
 		takeAction();
 	}
 }
+
+void Entity::death() {
+	std::cout << "You have died and your adventure is now over." << "\n";
+	std::cout << "Do you wish to restart? ";
+	getline(std::cin, theAnswer);
+	if (theAnswer == "Yes" || theAnswer == "yes")
+		gameClasses.theQuestion();
+	else if (theAnswer == "No" || theAnswer == "no")
+		std::cout << "The game is now officially over" << std::endl;
+	else {
+		std::cout << "Something went wrong" << std::endl;
+		death();
+	}
+}

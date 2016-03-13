@@ -15,5 +15,6 @@ public:
 	void setAtt(int i);
 	void setDef(int i);
 	void setName(int i);
+	void death();
 };
 

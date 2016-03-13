@@ -1,12 +1,17 @@
 #pragma once
+#include <string>
 class CombatHandler
 {
 public:
 	CombatHandler();
 	~CombatHandler();
+	std::string theAnswer;
 	bool playerTurn = true;
 	bool npcTurn = false;
-	void fight();
+	//int npcAttack;
+	void playerAttack();
+	void npcAttack(int i);
+	void battle();
 	void nextTurn();
 	void heal();
 	void flee();
