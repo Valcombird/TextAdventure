@@ -1,1 +1,2 @@
-﻿LINK : fatal error LNK1168: cannot open C:\Users\Chaotic\Documents\GitHub\TextAdventure\TextAdventure\Debug\TextAdventure.exe for writing
+﻿  CombatHandler.cpp
+  TextAdventure.vcxproj -> C:\Users\Chaotic\Documents\GitHub\TextAdventure\TextAdventure\Debug\TextAdventure.exe

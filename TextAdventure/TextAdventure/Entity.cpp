@@ -62,7 +62,7 @@ void Entity::encounter(int i) {
 	npc.setStats(i);
 	std::cout << "You have encounterd " << npc.npcName << "\n";
 	//takeAction();
-	combat.battle();
+	combat.nextTurn();
 }
 
 void Entity::takeAction() {

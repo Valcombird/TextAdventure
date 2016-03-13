@@ -6,7 +6,7 @@
 #include <iostream>
 #include <time.h>
 
-Classes gameClasses;
+extern Classes gameClasses;
 RoomHandler room;
 
 

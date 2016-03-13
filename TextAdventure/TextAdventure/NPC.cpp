@@ -2,6 +2,7 @@
 #include "NPC.h"
 #include "Classes.h"
 #include "CombatHandler.h"
+#include "Entity.h"
 
 #include <iostream>
 #include <map>
@@ -47,6 +48,7 @@ public:
 Goblin goblin;
 Classes gameClasses;
 CombatHandler combat;
+Entity misc;
 
 
 NPC::NPC()
@@ -63,6 +65,7 @@ void NPC::setStats(int i) {
 	setDef(i);
 	setAtt(i);
 	setName(i);
+	setXpGiven(i);
 }
 
 void NPC::setHp(int i) {
@@ -108,20 +111,11 @@ void NPC::displayInfo() {
 }
 
 void NPC::death() {
-	std::cout << "You have killed " << npcName << "\n";
-	std::cout << "You have gained " << xpGiven << "\n";
+	std::cout << "You have killed the " << npcName << "\n";
+	std::cout << "You have gained " << xpGiven << " xp\n";
 	gameClasses.xpForLevel += xpGiven;
 	gameClasses.levelUp();
 	combat.playerTurn = true;
 	combat.npcTurn = false;
+	misc.takeAction();
 }
-
-
-
-//void Goblin::displayStats() {
-//
-//}
-//
-//void Goblin::grabStats() {
-//
-//}
