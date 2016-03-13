@@ -6,7 +6,7 @@
 #include <iostream>
 #include <string>
 
-RoomHandler room;
+extern RoomHandler room;
 extern Entity misc;
 
 

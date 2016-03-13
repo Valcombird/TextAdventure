@@ -8,6 +8,7 @@ public:
 	void path(int i);
 	void pit();
 	void entrance();
+	void encounter(int i);
 private:
 	std::string theAnswer;
 };

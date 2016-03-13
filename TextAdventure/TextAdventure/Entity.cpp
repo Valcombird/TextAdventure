@@ -3,14 +3,16 @@
 #include "Classes.h"
 #include "DoorHandler.h"
 #include "RoomHandler.h"
+#include "NPC.h"
 
 #include <iostream>
 #include <vector>
 #include <string>
 
-Classes gameClasses;
+extern Classes gameClasses;
 extern DoorHandler door;
 extern RoomHandler room;
+NPC npc;
 
 std::vector<int> aPath;
 std::vector<std::string> pathName;
@@ -51,6 +53,12 @@ void Entity::pit() {
 		std::cout << "Something went wrong" << std::endl;
 		pit();
 	}
+}
+
+void Entity::encounter(int i) {
+	npc.setStats(i);
+	std::cout << "You have encounterd " << npc.npcName << "\n";
+	npc.displayInfo();
 }
 
 void Entity::path(int i) {

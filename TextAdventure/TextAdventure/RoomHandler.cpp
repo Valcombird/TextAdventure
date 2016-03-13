@@ -25,35 +25,46 @@ RoomHandler::~RoomHandler()
 {
 }
 
+/*int& optionsHandler = optionsNum[i];
+options.push_back("Search");
+options.push_back("Move on");*/
 void RoomHandler::search(int i) {
 	srand(static_cast<unsigned int>(time(NULL)));
-	/*int& optionsHandler = optionsNum[i];
-	options.push_back("Search");
-	options.push_back("Move on");*/
 	switch (i) {
 	case 0:
 		std::cout << "You found nothing -- Case 0" << "\n";
-		//door.door();
-		room();
+		moveOn(rand() % 3);
 		break;
 	case 1:
 		std::cout << "You found something -- Case 1" << "\n";
-		path.pathQuestion();
+		moveOn(rand() % 3);
 		break;
 	case 2:
 		std::cout << "You found everything -- Case 2" << "\n";
-		//door.door();
-		room();
+		moveOn(rand() % 3);
 		break;
 	case 3:
 		std::cout << "You found something -- Case 1" << "\n";
-		path.pathQuestion2();
+		moveOn(rand() % 3);
 		break;
 	}
 }
 
-void RoomHandler::moveOn() {
-	door.door();
+void RoomHandler::moveOn(int i) {
+	switch (i) {
+	case 0:
+		path.pathQuestion();
+		break;
+	case 1:
+		path.pathQuestion2();
+		break;
+	case 2:
+		door.door();
+		break;
+	case 3: //random enemy encounter
+		misc.encounter(/*rand() % 1*/0);
+		break;
+	}
 }
 
 void RoomHandler::room() {
@@ -64,7 +75,7 @@ void RoomHandler::room() {
 	if (theAnswer == "Search" || theAnswer == "search")
 		search(rand() % 3);
 	else if (theAnswer == "Move on" || theAnswer == "move on" || theAnswer == "Move On")
-		misc.pit();
+		moveOn(rand() % 3);
 	else {
 		std::cout << "Something went wrong" << std::endl;
 		room();

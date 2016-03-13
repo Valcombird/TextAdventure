@@ -29,15 +29,18 @@ void Classes::displayInfo() {
 void Classes::theQuestion() {
 	std::cout << "Which class? (Warrior or Archer) ";
 	getline(std::cin, chosenClass);
-	if (chosenClass == "warrior" || chosenClass == "Warrior")
+	if (chosenClass == "warrior" || chosenClass == "Warrior") {
 		chooseClass(0);
-	else if (chosenClass == "archer" || chosenClass == "Archer")
+		beginAdventure();
+	}	
+	else if (chosenClass == "archer" || chosenClass == "Archer") {
 		chooseClass(1);
+		beginAdventure();
+	}
 	else {
 		std::cout << "Something went wrong" << std::endl;
 		theQuestion();
 	}
-		
 }
 
 void Classes::beginAdventure() {
