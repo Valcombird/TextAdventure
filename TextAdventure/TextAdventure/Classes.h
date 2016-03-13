@@ -14,6 +14,9 @@ public:
 	int& playerDef = classDef;
 	int maxHp;
 	int& classNum;
+	int xpForLevel = 50;
+	int totalXp;
+	int playerLevel = 1;
 	void chooseClass(int numClass);
 	void theQuestion();
 	void beginAdventure();

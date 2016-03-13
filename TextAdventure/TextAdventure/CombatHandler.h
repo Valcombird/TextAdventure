@@ -4,9 +4,11 @@ class CombatHandler
 public:
 	CombatHandler();
 	~CombatHandler();
+	bool playerTurn = true;
+	bool npcTurn = false;
 	void fight();
-	void npcAttack();
-	void playerAttack();
 	void nextTurn();
+	void heal();
+	void flee();
 };
 

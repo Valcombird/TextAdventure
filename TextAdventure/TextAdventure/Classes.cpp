@@ -83,20 +83,23 @@ void Classes::chooseClass(int numClass) {
 }
 
 void Classes::levelUp() {
-	if (classNum == 0) {
-		maxHp += 25;
-		playerAtt += 1;
-		playerDef += 2;
-	} else if (classNum == 1) {
-		maxHp += 15;
-		playerAtt += 2;
-		playerDef += 1;
+	if (totalXp >= xpForLevel) {
+		if (classNum == 0) {
+			maxHp += 25;
+			playerAtt++;
+			playerDef += 2;
+			xpForLevel += 100;
+			playerLevel++;
+		}
+		else if (classNum == 1) {
+			maxHp += 15;
+			playerAtt += 2;
+			playerDef++;
+			xpForLevel += 100;
+			playerLevel++;
+		}
+		std::cout << "You have leveled up!" << "\n";
+		std::cout << "You are now level " << playerLevel;
 	}
 }
 
-//int classHP[] = { 100, 80 };
-//int& playerClassHP = classHP[advent.numClass];
-//int classAtt[] = { 70, 90 };
-//int& playerClassAtt = classAtt[advent.numClass];
-//string classNames[] = { "Warrior", "Archer" };
-//string& playerClassName = classNames[advent.numClass];

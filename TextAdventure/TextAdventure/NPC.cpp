@@ -9,7 +9,7 @@ public:
 	int goblinHp = 40;
 	int goblinAtt = 5;
 	int goblinDef = 2;
-	int xpGiven;
+	int xpGiven = 10;
 	std::string goblinName = "Goblin";
 private:
 };
@@ -19,7 +19,7 @@ public:
 	int orcHp = 0;
 	int orcAtt = 0;
 	int OrcDef = 0;
-	int xpGiven;
+	int xpGiven = 20;
 	std::string orcName = "Orc";
 };
 
@@ -28,7 +28,7 @@ public:
 	int shamanHp = 0;
 	int shamanAtt = 0;
 	int shamanDef = 0;
-	int xpGiven;
+	int xpGiven = 25;
 	std::string shamanName = "Shaman";
 };
 
@@ -37,7 +37,7 @@ public:
 	int skeletonHp = 0;
 	int skeletonAtt = 0;
 	int skeletonDef = 0;
-	int xpGiven;
+	int xpGiven = 15;
 	std::string skeletonName = "Skeleton";
 };
 

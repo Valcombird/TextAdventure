@@ -9,7 +9,6 @@ public:
 	int npcAtt;
 	int npcDef;
 	std::string npcName;
-	/*virtual void grabStats() = 0;*/
 	void displayInfo();
 	void setStats(int i);
 	void setHp(int i);
