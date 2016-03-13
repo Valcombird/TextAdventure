@@ -10,6 +10,7 @@ public:
 	std::string name;
 	int& playerAtt = classAtt;
 	int& playerHp = classHp;
+	int maxHp;
 	void chooseClass(int numClass);
 	void theQuestion();
 	void beginAdventure();

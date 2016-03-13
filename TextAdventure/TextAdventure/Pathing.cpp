@@ -55,37 +55,37 @@ void Pathing::chosenPath(int path, int trapPercent) {
 		std::cout << "Case 0" << "\n";
 		gameClasses.playerHp -= 10;
 		std::cout << gameClasses.playerHp << "\n";
-		room.moveOn(rand() % 3);
+		room.moveOn(rand() % 4);
 		break;
 	case 1:
 		std::cout << "Case 1" << "\n";
 		gameClasses.playerHp -= 10;
 		std::cout << gameClasses.playerHp << "\n";
-		room.moveOn(rand() % 3);
+		room.moveOn(rand() % 4);
 		break;
 	case 2:
 		std::cout << "Case 2" << "\n";
 		gameClasses.playerHp -= 10;
 		std::cout << gameClasses.playerHp << "\n";
-		room.moveOn(rand() % 3);
+		room.moveOn(rand() % 4);
 		break;
 	case 3:
 		std::cout << "Case 3" << "\n";
 		gameClasses.playerHp -= 10;
 		std::cout << gameClasses.playerHp << "\n";
-		room.moveOn(rand() % 3);
+		room.moveOn(rand() % 4);
 		break;
 	case 4:
 		std::cout << "Case 4" << "\n";
 		gameClasses.playerHp -= 10;
 		std::cout << gameClasses.playerHp << "\n";
-		room.moveOn(rand() % 3);
+		room.moveOn(rand() % 4);
 		break;
 	case 5:
 		std::cout << "Case 5" << "\n";
 		gameClasses.playerHp -= 10;
 		std::cout << gameClasses.playerHp << "\n";
-		room.moveOn(rand() % 3);
+		room.moveOn(rand() % 4);
 		break;
 	}
 }

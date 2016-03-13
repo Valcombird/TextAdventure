@@ -59,22 +59,15 @@ void Entity::encounter(int i) {
 	npc.setStats(i);
 	std::cout << "You have encounterd " << npc.npcName << "\n";
 	npc.displayInfo();
+	takeAction();
 }
 
-void Entity::path(int i) {
-
-	/*aPath.push_back(1);
-	aPath.push_back(100);
-	pathName.push_back("Test");
-	int& truePath = aPath[i];
-	switch (i) {
-	case 0: 
-		std::cout << aPath[i] << "\n";
-		std::cout << pathName[i] << "\n";
-		break;
-	case 1:
-		std::cout << aPath[i] << "\n";
-		std::cout << pathName[i] << "\n";
-		break;
-	}*/
+void Entity::takeAction() {
+	std::cout << "Take an action: (Move on) ";
+	if (theAnswer == "Move on" || theAnswer == "move on")
+		room.moveOn(rand() % 4);
+	else {
+		std::cout << "Something went wrong" << std::endl;
+		takeAction();
+	}
 }

@@ -32,17 +32,3 @@ void DoorHandler::door() {
 		door();
 	}
 }
-
-//void DoorHandler::doorGo() {
-//	std::cout << "You come across another door." << "\n";
-//	std::cout << "What do you do? ";
-//	getline(std::cin, theAnswer);
-//	if (theAnswer == "Yes" || theAnswer == "yes")
-//		misc.entrance();
-//	else if (theAnswer == "No" || theAnswer == "no")
-//		misc.pit();
-//	else {
-//		std::cout << "Something went wrong" << std::endl;
-//		doorGo();
-//	}
-//}

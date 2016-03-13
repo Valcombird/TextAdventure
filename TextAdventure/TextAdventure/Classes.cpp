@@ -60,6 +60,7 @@ void Classes::chooseClass(int numClass) {
 	switch (numClass) {
 	case 0: //warrior
 		std::cout << "You have chosen " << chosenClass << std::endl;
+		maxHp = 100;
 		classHp = 100;
 		classAtt = 6;
 		name = "Warrior";
@@ -68,6 +69,7 @@ void Classes::chooseClass(int numClass) {
 		break;
 	case 1: //archer
 		std::cout << "You have chosen " << chosenClass << std::endl;
+		maxHp = 80;
 		classHp = 80;
 		classAtt = 9;
 		name = "Archer";

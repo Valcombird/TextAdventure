@@ -7,39 +7,33 @@
 class Goblin : public NPC {
 public:
 	int goblinHp = 40;
-	int goblinAtt = 0;
-	int goblinDef = 0;
+	int goblinAtt = 5;
+	int goblinDef = 2;
 	std::string goblinName = "Goblin";
 private:
 };
 
 class Orc : public NPC {
 public:
-	virtual void grabStats();
-	virtual void displayStats();
-	int orcHp;
-	int orcAtt;
-	int OrcDef;
+	int orcHp = 0;
+	int orcAtt = 0;
+	int OrcDef = 0;
 	std::string orcName = "Orc";
 };
 
 class Shaman : public NPC {
 public:
-	virtual void grabStats();
-	virtual void displayStats();
-	int shamanHp;
-	int shamanAtt;
-	int shamanDef;
+	int shamanHp = 0;
+	int shamanAtt = 0;
+	int shamanDef = 0;
 	std::string shamanName = "Shaman";
 };
 
 class Skeleton : public NPC {
 public:
-	virtual void grabStats();
-	virtual void displayStats();
-	int skeletonHp;
-	int skeletonAtt;
-	int skeletonDef;
+	int skeletonHp = 0;
+	int skeletonAtt = 0;
+	int skeletonDef = 0;
 	std::string skeletonName = "Skeleton";
 };
 

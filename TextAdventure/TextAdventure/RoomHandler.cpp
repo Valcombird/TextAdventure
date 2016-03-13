@@ -33,36 +33,38 @@ void RoomHandler::search(int i) {
 	switch (i) {
 	case 0:
 		std::cout << "You found nothing -- Case 0" << "\n";
-		moveOn(rand() % 3);
+		moveOn(rand() % 4);
 		break;
 	case 1:
 		std::cout << "You found something -- Case 1" << "\n";
-		moveOn(rand() % 3);
+		moveOn(rand() % 4);
 		break;
 	case 2:
 		std::cout << "You found everything -- Case 2" << "\n";
-		moveOn(rand() % 3);
+		moveOn(rand() % 4);
 		break;
 	case 3:
 		std::cout << "You found something -- Case 1" << "\n";
-		moveOn(rand() % 3);
+		moveOn(rand() % 4);
 		break;
 	}
 }
 
 void RoomHandler::moveOn(int i) {
 	switch (i) {
-	case 0:
+	case 0: //2 path question
 		path.pathQuestion();
 		break;
-	case 1:
+	case 1: //3 path question
 		path.pathQuestion2();
 		break;
-	case 2:
+	case 2: //plain door
 		door.door();
 		break;
 	case 3: //random enemy encounter
-		misc.encounter(/*rand() % 1*/0);
+		misc.encounter(rand() % 1);
+		break;
+	case 4: //locked door
 		break;
 	}
 }
@@ -75,7 +77,7 @@ void RoomHandler::room() {
 	if (theAnswer == "Search" || theAnswer == "search")
 		search(rand() % 3);
 	else if (theAnswer == "Move on" || theAnswer == "move on" || theAnswer == "Move On")
-		moveOn(rand() % 3);
+		moveOn(rand() % 4);
 	else {
 		std::cout << "Something went wrong" << std::endl;
 		room();
