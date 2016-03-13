@@ -6,6 +6,39 @@ Hoping to learn more than I do.
 
 Thanks for looking I guess.
 
+3/12
+Combat System
+<ul>
+  <li>Healing</li>
+  <li>Turn based</li>
+  <li>RNG for npc and player</li>
+  <li>RNG for npc to heal</li>
+  <li>Working npcs</li>
+  <li>Level up system</li>
+  
+</ul>
+Pathing
+<ul>
+  <li>Further optimized?</li>
+  <li>More cases</li>
+</ul>
+NPCs
+<ul>
+  <li>Some more NPCs with no stats</li>
+  <li>NPC getter and setter for stats/xp</li>
+</ul>
+More?
+
+3/11
+Pathing
+<ul>
+  <li>RNG based (not really)</li>
+  <li>Trap system initialized</li>
+  <li>Switches versus maps/factories still considering</li>
+  <li>HP system integration for traps (for now)</li>
+</ul>
+That's about it... Oh and realized I could use HTML in this.. Going to leave the rest sloppy to show I do it on this day.
+
 3/10
 DoorHandler
   Open the door...
