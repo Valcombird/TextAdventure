@@ -6,7 +6,7 @@ Hoping to learn more than I do.
 
 Thanks for looking I guess.
 
-3/12
+3/12<br>
 Combat System
 <ul>
   <li>Healing</li>
@@ -29,7 +29,7 @@ NPCs
 </ul>
 More?
 
-3/11
+3/11<br>
 Pathing
 <ul>
   <li>RNG based (not really)</li>
