@@ -9,11 +9,14 @@ public:
 	bool playerTurn = true;
 	bool npcTurn = false;
 	//int npcAttack;
-	void playerAttack();
+	int npcDmg;
+	int playerDmg;
+	void playerAttack(int i);
 	void npcAttack(int i);
 	void battle();
 	void nextTurn();
+	void combatHeal();
 	void heal();
-	void flee();
+	void flee(int i);
 };
 

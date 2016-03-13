@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 
-Entity misc;
+extern Entity misc;
 
 std::string chosenClass;
 std::string& playerClassName = chosenClass;

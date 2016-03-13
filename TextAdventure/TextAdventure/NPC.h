@@ -6,8 +6,10 @@ public:
 	NPC();
 	~NPC();
 	int npcHp;
+	int npcMaxHp;
 	int npcAtt;
 	int npcDef;
+	int xpGiven;
 	std::string npcName;
 	void displayInfo();
 	void setStats(int i);
@@ -15,6 +17,7 @@ public:
 	void setAtt(int i);
 	void setDef(int i);
 	void setName(int i);
+	void setXpGiven(int i);
 	void death();
 };
 

@@ -1,11 +1,14 @@
 #include "stdafx.h"
 #include "NPC.h"
+#include "Classes.h"
+#include "CombatHandler.h"
 
 #include <iostream>
 #include <map>
 
 class Goblin : public NPC {
 public:
+	int goblinMaxHp = 40;
 	int goblinHp = 40;
 	int goblinAtt = 5;
 	int goblinDef = 2;
@@ -42,7 +45,8 @@ public:
 };
 
 Goblin goblin;
-
+Classes gameClasses;
+CombatHandler combat;
 
 
 NPC::NPC()
@@ -63,8 +67,9 @@ void NPC::setStats(int i) {
 
 void NPC::setHp(int i) {
 	std::map<int, int> statsHp;
-	statsHp[0] = goblin.goblinHp;
+	statsHp[0] = goblin.goblinMaxHp;
 
+	npcMaxHp = statsHp[i];
 	npcHp = statsHp[i];
 }
 
@@ -89,6 +94,13 @@ void NPC::setName(int i) {
 	npcName = statsName[i];
 }
 
+void NPC::setXpGiven(int i) {
+	std::map<int, int> statsXp;
+	statsXp[0] = goblin.xpGiven;
+
+	xpGiven = statsXp[i];
+}
+
 void NPC::displayInfo() {
 	std::cout << npcAtt << "\n";
 	std::cout << npcDef << "\n";
@@ -96,7 +108,12 @@ void NPC::displayInfo() {
 }
 
 void NPC::death() {
-
+	std::cout << "You have killed " << npcName << "\n";
+	std::cout << "You have gained " << xpGiven << "\n";
+	gameClasses.xpForLevel += xpGiven;
+	gameClasses.levelUp();
+	combat.playerTurn = true;
+	combat.npcTurn = false;
 }
 
 

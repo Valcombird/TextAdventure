@@ -11,9 +11,9 @@ public:
 	std::string name;
 	int& playerAtt = classAtt;
 	int& playerHp = classHp;
-	int& playerDef = classDef;
 	int maxHp;
-	int& classNum;
+	int& playerDef = classDef;
+	int classNum;
 	int xpForLevel = 50;
 	int totalXp;
 	int playerLevel = 1;
