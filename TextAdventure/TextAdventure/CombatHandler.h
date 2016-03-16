@@ -8,7 +8,6 @@ public:
 	std::string theAnswer;
 	bool playerTurn = true;
 	bool npcTurn = false;
-	//int npcAttack;
 	int npcDmg;
 	int playerDmg;
 	void playerAttack(int i);

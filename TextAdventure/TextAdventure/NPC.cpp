@@ -15,7 +15,6 @@ public:
 	int goblinDef = 2;
 	int xpGiven = 10;
 	std::string goblinName = "Goblin";
-private:
 };
 
 class Orc : public NPC {
