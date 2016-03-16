@@ -14,8 +14,6 @@ extern RoomHandler room;
 int main()
 {
 	gameClasses.theQuestion();
-	//room.room();
-	//room.moveOn(3);
 	return 0;
 }
 

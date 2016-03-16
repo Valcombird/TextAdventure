@@ -27,19 +27,19 @@ void RoomHandler::search(int i) {
 	switch (i) {
 	case 0:
 		std::cout << "You found nothing -- Case 0" << "\n";
-		moveOn(rand() % 4);
+		misc.takeAction();
 		break;
 	case 1:
 		std::cout << "You found something -- Case 1" << "\n";
-		moveOn(rand() % 4);
+		misc.takeAction();
 		break;
 	case 2:
 		std::cout << "You found everything -- Case 2" << "\n";
-		moveOn(rand() % 4);
+		misc.takeAction();
 		break;
 	case 3:
-		std::cout << "You found something -- Case 1" << "\n";
-		moveOn(rand() % 4);
+		std::cout << "You found something -- Case 3" << "\n";
+		misc.takeAction();
 		break;
 	}
 }

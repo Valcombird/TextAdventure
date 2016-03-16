@@ -4,15 +4,18 @@
 #include "DoorHandler.h"
 #include "RoomHandler.h"
 #include "NPC.h"
+#include "CombatHandler.h"
 
 #include <iostream>
 #include <vector>
 #include <string>
+#include <time.h>
 
 extern Classes gameClasses;
 extern DoorHandler door;
 extern RoomHandler room;
 NPC npc;
+extern CombatHandler combat;
 
 std::vector<int> aPath;
 std::vector<std::string> pathName;
@@ -58,18 +61,34 @@ void Entity::pit() {
 void Entity::encounter(int i) {
 	npc.setStats(i);
 	std::cout << "You have encounterd " << npc.npcName << "\n";
-	npc.displayInfo();
-	takeAction();
+	//takeAction();
+	combat.nextTurn();
 }
 
 void Entity::takeAction() {
 	srand(static_cast<unsigned int>(time(NULL)));
-	std::cout << "Take an action: (Move on) ";
+	std::cout << "Take an action: (Move on or heal) ";
 	getline(std::cin, theAnswer);
 	if (theAnswer == "Move on" || theAnswer == "move on")
 		room.moveOn(rand() % 4);
+	if (theAnswer == "Heal" || theAnswer == "heal")
+		combat.heal();
 	else {
 		std::cout << "Something went wrong" << std::endl;
 		takeAction();
+	}
+}
+
+void Entity::death() {
+	std::cout << "You have died and your adventure is now over." << "\n";
+	std::cout << "Do you wish to restart? ";
+	getline(std::cin, theAnswer);
+	if (theAnswer == "Yes" || theAnswer == "yes")
+		gameClasses.theQuestion();
+	else if (theAnswer == "No" || theAnswer == "no")
+		std::cout << "The game is now officially over" << std::endl;
+	else {
+		std::cout << "Something went wrong" << std::endl;
+		death();
 	}
 }

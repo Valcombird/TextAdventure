@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 
-Entity misc;
+extern Entity misc;
 
 std::string chosenClass;
 std::string& playerClassName = chosenClass;
@@ -63,8 +63,8 @@ void Classes::chooseClass(int numClass) {
 		std::cout << "You have chosen " << chosenClass << std::endl;
 		maxHp = 100;
 		classHp = 100;
-		classAtt = 4;
-		classDef = 9;
+		classAtt = 6;
+		classDef = 10;
 		name = "Warrior";
 		displayInfo();
 		beginAdventure();
@@ -73,8 +73,8 @@ void Classes::chooseClass(int numClass) {
 		std::cout << "You have chosen " << chosenClass << std::endl;
 		maxHp = 80;
 		classHp = 80;
-		classAtt = 9;
-		classDef = 4;
+		classAtt = 11;
+		classDef = 5;
 		name = "Archer";
 		displayInfo();
 		beginAdventure();

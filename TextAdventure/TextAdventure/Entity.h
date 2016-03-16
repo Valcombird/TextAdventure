@@ -10,6 +10,7 @@ public:
 	void entrance();
 	void encounter(int i);
 	void takeAction();
+	void death();
 private:
 	std::string theAnswer;
 };

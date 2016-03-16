@@ -149,6 +149,7 @@
     <ClInclude Include="CombatHandler.h" />
     <ClInclude Include="DoorHandler.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="ItemHandler.h" />
     <ClInclude Include="NPC.h" />
     <ClInclude Include="Pathing.h" />
     <ClInclude Include="resource.h" />
@@ -161,6 +162,7 @@
     <ClCompile Include="CombatHandler.cpp" />
     <ClCompile Include="DoorHandler.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="ItemHandler.cpp" />
     <ClCompile Include="NPC.cpp" />
     <ClCompile Include="Pathing.cpp" />
     <ClCompile Include="RoomHandler.cpp" />
