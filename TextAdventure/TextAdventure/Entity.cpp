@@ -5,6 +5,7 @@
 #include "RoomHandler.h"
 #include "NPC.h"
 #include "CombatHandler.h"
+#include "Skills.h"
 
 #include <iostream>
 #include <vector>
@@ -14,7 +15,8 @@
 extern Classes gameClasses;
 extern DoorHandler door;
 extern RoomHandler room;
-NPC npc;
+extern Skills skills;
+extern NPC npc;
 extern CombatHandler combat;
 
 std::vector<int> aPath;
@@ -61,7 +63,6 @@ void Entity::pit() {
 void Entity::encounter(int i) {
 	npc.setStats(i);
 	std::cout << "You have encounterd " << npc.npcName << "\n";
-	//takeAction();
 	combat.nextTurn();
 }
 
@@ -72,7 +73,7 @@ void Entity::takeAction() {
 	if (theAnswer == "Move on" || theAnswer == "move on")
 		room.moveOn(rand() % 4);
 	if (theAnswer == "Heal" || theAnswer == "heal")
-		combat.heal();
+		skills.heal();
 	else {
 		std::cout << "Something went wrong" << std::endl;
 		takeAction();

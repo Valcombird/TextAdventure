@@ -45,10 +45,9 @@ public:
 };
 
 Goblin goblin;
-Classes gameClasses;
-CombatHandler combat;
-Entity misc;
-
+extern Classes gameClasses;
+extern CombatHandler combat;
+extern Entity misc;
 
 NPC::NPC()
 {
@@ -100,7 +99,7 @@ void NPC::setXpGiven(int i) {
 	std::map<int, int> statsXp;
 	statsXp[0] = goblin.xpGiven;
 
-	xpGiven = statsXp[i];
+	npcXpGiven = statsXp[i];
 }
 
 void NPC::displayInfo() {
@@ -111,8 +110,8 @@ void NPC::displayInfo() {
 
 void NPC::death() {
 	std::cout << "You have killed the " << npcName << "\n";
-	std::cout << "You have gained " << xpGiven << " xp\n";
-	gameClasses.xpForLevel += xpGiven;
+	std::cout << "You have gained " << npcXpGiven << " xp\n";
+	gameClasses.xpForLevel += npcXpGiven;
 	gameClasses.levelUp();
 	combat.playerTurn = true;
 	combat.npcTurn = false;

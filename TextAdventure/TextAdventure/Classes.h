@@ -7,11 +7,14 @@ public:
 	~Classes();
 	int classAtt;
 	int classHp;
+	int classMp;
 	int classDef;
 	std::string name;
 	int& playerAtt = classAtt;
 	int& playerHp = classHp;
+	int& playerMp = classMp;
 	int maxHp;
+	int maxMp;
 	int& playerDef = classDef;
 	int classNum;
 	int xpForLevel = 50;
@@ -22,6 +25,11 @@ public:
 	void beginAdventure();
 	void displayInfo();
 	void levelUp();
+	//attack
+	bool hasStrike;
+	bool hasStraightShot;
+	//support
+	bool hasHeal;
 private:
 	std::string theAnswer;
 };

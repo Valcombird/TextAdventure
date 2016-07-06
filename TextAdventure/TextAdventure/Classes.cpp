@@ -63,6 +63,8 @@ void Classes::chooseClass(int numClass) {
 		std::cout << "You have chosen " << chosenClass << std::endl;
 		maxHp = 100;
 		classHp = 100;
+		maxMp = 20;
+		classMp = 20;
 		classAtt = 6;
 		classDef = 10;
 		name = "Warrior";
@@ -73,6 +75,8 @@ void Classes::chooseClass(int numClass) {
 		std::cout << "You have chosen " << chosenClass << std::endl;
 		maxHp = 80;
 		classHp = 80;
+		maxMp = 40;
+		classMp = 40;
 		classAtt = 11;
 		classDef = 5;
 		name = "Archer";
@@ -88,16 +92,14 @@ void Classes::levelUp() {
 			maxHp += 25;
 			playerAtt++;
 			playerDef += 2;
-			xpForLevel += 100;
-			playerLevel++;
 		}
 		else if (classNum == 1) {
 			maxHp += 15;
 			playerAtt += 2;
 			playerDef++;
-			xpForLevel += 100;
-			playerLevel++;
 		}
+		playerLevel++;
+		xpForLevel += 100;
 		std::cout << "You have leveled up!" << "\n";
 		std::cout << "You are now level " << playerLevel;
 	}

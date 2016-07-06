@@ -3,12 +3,14 @@
 #include "NPC.h"
 #include "Classes.h"
 #include "Entity.h"
+#include "Skills.h"
 
 #include <iostream>
 #include <time.h>
 
-extern NPC npc;
+NPC npc;
 extern Classes gameClasses;
+Skills skills;
 extern Entity misc;
 
 CombatHandler::CombatHandler()
@@ -29,7 +31,7 @@ void CombatHandler::nextTurn() {
 			if (theAnswer == "attack" || theAnswer == "Attack")
 				playerAttack(rand() % 101);
 			else if (theAnswer == "Heal" || theAnswer == "heal")
-				combatHeal();
+				skills.heal();
 			else if (theAnswer == "Flee" || theAnswer == "flee")
 				flee(rand() % 101);
 			else {
@@ -114,67 +116,22 @@ void CombatHandler::npcAttack(int i) {
 		//}
 	}
 	else {
-		combatHeal();
+		skills.heal();
 		playerTurn = true;
 		nextTurn();
 	}
-}
-
-void CombatHandler::combatHeal() {
-	if (playerTurn == true) {
-		if (gameClasses.playerHp != gameClasses.maxHp) {
-			gameClasses.playerHp += 15;
-			if (gameClasses.playerHp >= gameClasses.maxHp)
-				gameClasses.playerHp = gameClasses.maxHp;
-			std::cout << "You now have " << gameClasses.playerHp << " hp\n";
-			playerTurn = false;
-			nextTurn();
-		}
-		else {
-			std::cout << "You already have full hp!";
-			nextTurn();
-		}		
-	}
-	else if (playerTurn == false) {
-		if (npc.npcHp != npc.npcMaxHp) {
-			npc.npcHp += 10;
-			if (npc.npcHp >= npc.npcMaxHp)
-				npc.npcHp = npc.npcMaxHp;
-			std::cout << "The " << npc.npcName << " healed for 10 hp!" << "\n";
-			std::cout << npc.npcName << " now has " << npc.npcHp << " hp\n";
-			playerTurn = true;
-		}
-		else {
-			npcAttack(rand() % 101);
-		}
-	}
-
 }
 
 void CombatHandler::flee(int i) {
 	if (i >= 30)
 		misc.takeAction();
 	else {
-		std::cout << "You have failed to flee from combat!" << "\n";
+		std::cout << "You failed to flee from combat!" << "\n";
 		playerTurn = false;
 		nextTurn();
 	}
 }
 
-void CombatHandler::heal() {
-	int i = 0;
-	do {
-		if (gameClasses.playerHp != gameClasses.maxHp) {
-			gameClasses.playerHp += 15;
-			if (gameClasses.playerHp >= gameClasses.maxHp)
-				gameClasses.playerHp = gameClasses.maxHp;
-			std::cout << "You now have " << gameClasses.playerHp << "\n";
-			misc.takeAction();
-		}
-		else {
-			std::cout << "You already have full hp!" << "\n";
-			misc.takeAction();
-		}
-		i++;
-	} while (i <= 0);
+void CombatHandler::skillMenu() {
+
 }

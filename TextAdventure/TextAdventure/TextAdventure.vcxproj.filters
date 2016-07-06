@@ -9,6 +9,15 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
+    <Filter Include="Source Files\Entity">
+      <UniqueIdentifier>{9f661f04-42af-412c-85c1-831a51e8a42e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Player">
+      <UniqueIdentifier>{055c76bd-24d7-43ac-9b56-468244c3db2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\World">
+      <UniqueIdentifier>{53a05189-4f3f-483e-9f04-c0da786cd7d4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -47,6 +56,9 @@
     <ClInclude Include="ItemHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Skills.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -55,29 +67,32 @@
     <ClCompile Include="TextAdventure.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Entity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Classes.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="RoomHandler.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="CombatHandler.cpp">
+      <Filter>Source Files\Player</Filter>
     </ClCompile>
     <ClCompile Include="DoorHandler.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\World</Filter>
     </ClCompile>
-    <ClCompile Include="CombatHandler.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Classes.cpp">
+      <Filter>Source Files\Player</Filter>
     </ClCompile>
-    <ClCompile Include="Pathing.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="NPC.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="ItemHandler.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="NPC.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Pathing.cpp">
+      <Filter>Source Files\World</Filter>
+    </ClCompile>
+    <ClCompile Include="RoomHandler.cpp">
+      <Filter>Source Files\World</Filter>
+    </ClCompile>
+    <ClCompile Include="Skills.cpp">
+      <Filter>Source Files\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
