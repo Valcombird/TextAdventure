@@ -1,12 +1,14 @@
 #include "stdafx.h"
 #include "Classes.h"
 #include "Entity.h"
+#include "Skills.h"
 
 #include <iostream>
 #include <string>
 #include <vector>
 
 extern Entity misc;
+extern Skills skills;
 
 std::string chosenClass;
 std::string& playerClassName = chosenClass;
@@ -60,7 +62,6 @@ void Classes::chooseClass(int numClass) {
 	classNum = numClass;
 	switch (numClass) {
 	case 0: //warrior
-		std::cout << "You have chosen " << chosenClass << std::endl;
 		maxHp = 100;
 		classHp = 100;
 		maxMp = 20;
@@ -68,11 +69,9 @@ void Classes::chooseClass(int numClass) {
 		classAtt = 6;
 		classDef = 10;
 		name = "Warrior";
-		displayInfo();
-		beginAdventure();
+		hasStrike = true;
 		break;
 	case 1: //archer
-		std::cout << "You have chosen " << chosenClass << std::endl;
 		maxHp = 80;
 		classHp = 80;
 		maxMp = 40;
@@ -80,10 +79,11 @@ void Classes::chooseClass(int numClass) {
 		classAtt = 11;
 		classDef = 5;
 		name = "Archer";
-		displayInfo();
-		beginAdventure();
+		hasStraightShot = true;
 		break;
 	}
+	std::cout << "You have chosen " << chosenClass << "\n";
+	beginAdventure();
 }
 
 void Classes::levelUp() {

@@ -1,40 +1,40 @@
-========================================================================
-    CONSOLE APPLICATION : TextAdventure Project Overview
-========================================================================
+Seeing how much I can do in C++
 
-AppWizard has created this TextAdventure application for you.
+7/6
+Been a while...
+Skill System
+	Skills require MP
+	Strike skill for warrior in the make
+	Heal is a skill
+	Cleaned up some code (Maybe)
+Skill menu for combat (semi-working)
 
-This file contains a summary of what you will find in each of the files that
-make up your TextAdventure application.
+3/12
+Combat System
+	Healing
+	Turn based
+	RNG for npc and player
+	RNG for npc to heal
+	Working npcs
+	Level up system
+	Pathing
+Further optimized?
+More cases
+NPCs
+Some more NPCs with no stats
+NPC getter and setter for stats/xp
+More?
 
+3/11
+Pathing
+	RNG based (not really)
+	Trap system initialized
+	Switches versus maps/factories still considering
+	HP system integration for traps (for now)
+	That's about it... Oh and realized I could use HTML in this.. Going to leave the rest sloppy to show I do it on this day.
 
-TextAdventure.vcxproj
-    This is the main project file for VC++ projects generated using an Application Wizard.
-    It contains information about the version of Visual C++ that generated the file, and
-    information about the platforms, configurations, and project features selected with the
-    Application Wizard.
+3/10 DoorHandler Open the door... RoomHandler Random number = random encounter CombatHandler In progress
 
-TextAdventure.vcxproj.filters
-    This is the filters file for VC++ projects generated using an Application Wizard. 
-    It contains information about the association between the files in your project 
-    and the filters. This association is used in the IDE to show grouping of files with
-    similar extensions under a specific node (for e.g. ".cpp" files are associated with the
-    "Source Files" filter).
+3/9 Decided on vectors. Got class system working even more. Pathing system started?
 
-TextAdventure.cpp
-    This is the main application source file.
-
-/////////////////////////////////////////////////////////////////////////////
-Other standard files:
-
-StdAfx.h, StdAfx.cpp
-    These files are used to build a precompiled header (PCH) file
-    named TextAdventure.pch and a precompiled types file named StdAfx.obj.
-
-/////////////////////////////////////////////////////////////////////////////
-Other notes:
-
-AppWizard uses "TODO:" comments to indicate parts of the source code you
-should add to or customize.
-
-/////////////////////////////////////////////////////////////////////////////
+3/8 Started. Got nothing done really because ran into common errors. Got a somewhat basic class system working? Maybe.

@@ -26,10 +26,10 @@ public:
 	void displayInfo();
 	void levelUp();
 	//attack
-	bool hasStrike;
-	bool hasStraightShot;
+	bool hasStrike = false;
+	bool hasStraightShot = false;
 	//support
-	bool hasHeal;
+	bool hasHeal = true;
 private:
 	std::string theAnswer;
 };

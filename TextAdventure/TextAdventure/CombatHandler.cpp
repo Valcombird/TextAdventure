@@ -30,8 +30,8 @@ void CombatHandler::nextTurn() {
 			getline(std::cin, theAnswer);
 			if (theAnswer == "attack" || theAnswer == "Attack")
 				playerAttack(rand() % 101);
-			else if (theAnswer == "Heal" || theAnswer == "heal")
-				skills.heal();
+			else if (theAnswer == "Skills" || theAnswer == "skills")
+				skillMenu();
 			else if (theAnswer == "Flee" || theAnswer == "flee")
 				flee(rand() % 101);
 			else {
@@ -133,5 +133,14 @@ void CombatHandler::flee(int i) {
 }
 
 void CombatHandler::skillMenu() {
-
+	std::cout << "Your available skills are: " << "\n";
+	if (gameClasses.hasStrike == true) {
+		std::cout << "Strike ";
+	}
+	if (gameClasses.hasStraightShot == true) {
+		std::cout << "Straight Shot ";
+	}
+	if (gameClasses.hasHeal == true) {
+		std::cout << "Heal ";
+	}
 }
