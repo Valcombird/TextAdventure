@@ -6,6 +6,18 @@ Hoping to learn more than I do.
 
 Thanks for looking I guess.
 
+7/6<br>
+Been a while...<br>
+Skill System
+<ul>
+  <li>Skills require MP</li>
+  <li>Strike skill for warrior in the make</li>
+  <li>Heal is a skill</li>
+  <Straight shot for archer in the make</li>
+</ul>
+Cleaned up some code (Maybe)
+
+
 3/12<br>
 Combat System
 <ul>
