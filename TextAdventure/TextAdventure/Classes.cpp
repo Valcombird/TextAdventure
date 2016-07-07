@@ -23,9 +23,10 @@ Classes::~Classes()
 }
 
 void Classes::displayInfo() {
-	std::cout << playerHp << std::endl;
-	std::cout << playerAtt << std::endl;
-	std::cout << name << std::endl;
+	std::cout << "HP: " << playerHp << " MP: " << playerMp << "\n";
+	std::cout << "Attack: " << playerAtt << " Defence: " << playerDef << "\n";
+	std::cout << "Exp needed to level: " << xpForLevel - totalXp << "\n";
+	misc.takeAction();
 }
 
 void Classes::theQuestion() {

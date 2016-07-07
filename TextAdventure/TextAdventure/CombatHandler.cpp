@@ -26,11 +26,11 @@ void CombatHandler::nextTurn() {
 	srand(static_cast<unsigned int>(time(NULL)));
 	if (gameClasses.playerHp > 0 && npc.npcHp > 0) {
 		if (playerTurn == true) {
-			std::cout << "What do you wish to do? (Attack, Heal, Flee) ";
+			std::cout << "What do you wish to do? (Attack, Skills, Flee) ";
 			getline(std::cin, theAnswer);
 			if (theAnswer == "attack" || theAnswer == "Attack")
 				playerAttack(rand() % 101);
-			else if (theAnswer == "Skills" || theAnswer == "skills")
+			else if (theAnswer == "Skills" || theAnswer == "skills" || theAnswer == "Skill" || theAnswer == "skill")
 				skillMenu();
 			else if (theAnswer == "Flee" || theAnswer == "flee")
 				flee(rand() % 101);
@@ -53,7 +53,7 @@ void CombatHandler::playerAttack(int i) {
 	if (npc.npcDef >= gameClasses.playerAtt) {
 		npc.npcHp -= 2;
 		std::cout << "You hit the " << npc.npcName << " for 2 damage\n";
-		std::cout << "The " << npc.npcName << " has " << npc.npcHp << " hp\n";
+		std::cout << "The " << npc.npcName << " has " << npc.npcHp << " HP\n";
 		playerTurn = false;
 		nextTurn();
 	}
@@ -62,7 +62,7 @@ void CombatHandler::playerAttack(int i) {
 			playerDmg = rand() % (gameClasses.playerAtt * 2);
 			npc.npcHp -= playerDmg;
 			std::cout << "You critically hit the " << npc.npcName << " for " << playerDmg << " damage!\n";
-			std::cout << "The " << npc.npcName << " has " << npc.npcHp << " hp\n";
+			std::cout << "The " << npc.npcName << " has " << npc.npcHp << " HP\n";
 			playerTurn = false;
 			nextTurn();
 		}
@@ -70,7 +70,7 @@ void CombatHandler::playerAttack(int i) {
 			playerDmg = rand() % (gameClasses.playerAtt * 2);
 			npc.npcHp -= playerDmg;
 			std::cout << "You critically hit the " << npc.npcName << " for " << playerDmg << " damage!\n";
-			std::cout << "The " << npc.npcName << " has " << npc.npcHp << " hp\n";
+			std::cout << "The " << npc.npcName << " has " << npc.npcHp << " HP\n";
 			playerTurn = false;
 			nextTurn();
 		}
@@ -78,7 +78,7 @@ void CombatHandler::playerAttack(int i) {
 			playerDmg = rand() % (gameClasses.playerAtt + 1);
 			npc.npcHp -= playerDmg;
 			std::cout << "You hit the " << npc.npcName << " for " << playerDmg << " damage\n";
-			std::cout << "The " << npc.npcName << " has " << npc.npcHp << " hp\n";
+			std::cout << "The " << npc.npcName << " has " << npc.npcHp << " HP\n";
 			playerTurn = false;
 			nextTurn();
 		}
@@ -101,7 +101,7 @@ void CombatHandler::npcAttack(int i) {
 				npcDmg = rand() % (npc.npcAtt * 2);
 				gameClasses.playerHp -= npcDmg;
 				std::cout << npc.npcName << " has hit hit you for a critical hit dealing " << npcDmg << " damage!\n";
-				std::cout << "You now have " << gameClasses.playerHp << "\n";
+				std::cout << "You now have " << gameClasses.playerHp << " HP\n";
 				playerTurn = true;
 				nextTurn();
 			}
@@ -109,14 +109,14 @@ void CombatHandler::npcAttack(int i) {
 				npcDmg = rand() % npc.npcAtt;
 				gameClasses.playerHp -= npcDmg;
 				std::cout << npc.npcName << " hit you for " << npcDmg << " damage\n";
-				std::cout << "You now have " << gameClasses.playerHp << "\n";
+				std::cout << "You now have " << gameClasses.playerHp << " HP\n";
 				playerTurn = true;
 				nextTurn();
 			}
 		//}
 	}
 	else {
-		skills.heal();
+		skills.combatHeal();
 		playerTurn = true;
 		nextTurn();
 	}
@@ -142,5 +142,24 @@ void CombatHandler::skillMenu() {
 	}
 	if (gameClasses.hasHeal == true) {
 		std::cout << "Heal ";
+	}
+	std::cout << "\n";
+	std::cout << "Choose a skill to use or go back to original menu (Skill name or back)" << "\n";
+	getline(std::cin, theAnswer);
+	skillPicker(theAnswer);
+}
+
+void CombatHandler::skillPicker(std::string skillToUse) {
+	if (theAnswer == "Back" || theAnswer == "back") nextTurn();
+	else {
+		if (theAnswer == "Strike" || theAnswer == "strike") skills.strike();
+		if (theAnswer == "Straight Shot" || theAnswer == "Straight shot" || theAnswer == "straight shot" || theAnswer == "straight Shot") skills.straightShot();
+		if (theAnswer == "Heal" || theAnswer == "heal") skills.combatHeal();
+		else {
+			std::cout << "Something went wrong" << "\n";
+			skillMenu();
+		}
+		playerTurn = false;
+		nextTurn();
 	}
 }

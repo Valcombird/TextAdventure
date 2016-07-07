@@ -16,5 +16,6 @@ public:
 	void nextTurn();
 	void flee(int i);
 	void skillMenu();
+	void skillPicker(std::string skillToUse);
 };
 

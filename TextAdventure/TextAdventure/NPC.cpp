@@ -111,7 +111,7 @@ void NPC::displayInfo() {
 void NPC::death() {
 	std::cout << "You have killed the " << npcName << "\n";
 	std::cout << "You have gained " << npcXpGiven << " xp\n";
-	gameClasses.xpForLevel += npcXpGiven;
+	gameClasses.totalXp += npcXpGiven;
 	gameClasses.levelUp();
 	combat.playerTurn = true;
 	combat.npcTurn = false;

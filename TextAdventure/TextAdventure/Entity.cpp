@@ -68,10 +68,12 @@ void Entity::encounter(int i) {
 
 void Entity::takeAction() {
 	srand(static_cast<unsigned int>(time(NULL)));
-	std::cout << "Take an action: (Move on or heal) ";
+	std::cout << "Take an action: (Move on, Check stats, or heal) ";
 	getline(std::cin, theAnswer);
 	if (theAnswer == "Move on" || theAnswer == "move on")
 		room.moveOn(rand() % 4);
+	if (theAnswer == "Check Stats" || theAnswer == "Check stats" || theAnswer == "check stats" || theAnswer == "check Stats")
+		gameClasses.displayInfo();
 	if (theAnswer == "Heal" || theAnswer == "heal")
 		skills.heal();
 	else {

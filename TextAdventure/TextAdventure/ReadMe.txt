@@ -1,5 +1,19 @@
 Seeing how much I can do in C++
 
+7/7
+Skills System
+	Skill menu working
+	Strike works (need to work on algorithm for damage)
+	Recognizes if you don't know that skill yet
+	Checks for MP requirement
+	Display MP
+Taking actions
+	Now able to check stats on the go
+Combat
+	Fixed some discrepencies with HP not being shown
+	Fixed XP giving so it actually gives XP instead of adding to the XP requried to level
+	Fixed NPC heal so it continues combat instead of going to action screen
+
 7/6
 Been a while...
 Skill System

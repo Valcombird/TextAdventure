@@ -24,18 +24,38 @@ Skills::~Skills()
 
 void Skills::strike() {
 	srand(static_cast<unsigned int>(time(NULL)));
-	if (combat.playerTurn == true) {
-		if (gameClasses.playerMp >= 3) {
-			gameClasses.playerMp -= 3;
-			combat.playerDmg = rand() % (gameClasses.playerAtt * 2 + 10);
-			npc.npcHp -= combat.playerDmg;
-			std::cout << "You use strike and deal "  << combat.playerDmg << " \n";
-			combat.playerTurn = false;
-			combat.nextTurn();
+	if (gameClasses.hasStrike != true) {
+		std::cout << "You don't know this skill!" << "\n";
+		combat.skillMenu();
+	}
+	else {
+		if (combat.playerTurn == true) {
+			if (gameClasses.playerMp >= 3) {
+				gameClasses.playerMp -= 3;
+				combat.playerDmg = rand() % (gameClasses.playerAtt * 2 + 20);
+				npc.npcHp -= combat.playerDmg;
+				std::cout << "You use strike and deal " << combat.playerDmg << " damage\n";
+				std::cout << "The " << npc.npcName << " has " << npc.npcHp << " left\n";
+				std::cout << "You have " << gameClasses.playerMp << " MP left.\n";
+				combat.playerTurn = false;
+				combat.nextTurn();
+			}
+			else {
+				std::cout << "You don't have enough MP!" << "\n";
+				combat.nextTurn();
+			}
 		}
-		else {
-			std::cout << "You don't have enough MP!" << "\n";
-			combat.nextTurn();
+	}
+}
+
+void Skills::straightShot() {
+	if (gameClasses.hasStraightShot != true) {
+		std::cout << "You don't know this skill!" << "\n";
+		combat.skillMenu();
+	}
+	else {
+		if (combat.playerTurn == true) {
+
 		}
 	}
 }
@@ -65,15 +85,14 @@ void Skills::combatHeal() {
 			npc.npcHp += 10;
 			if (npc.npcHp >= npc.npcMaxHp)
 				npc.npcHp = npc.npcMaxHp;
-			std::cout << "The " << npc.npcName << " healed for 10 hp!" << "\n";
-			std::cout << npc.npcName << " now has " << npc.npcHp << " hp\n";
+			std::cout << "The " << npc.npcName << " healed for 10 HP!" << "\n";
+			std::cout << npc.npcName << " now has " << npc.npcHp << " HP\n";
 			combat.playerTurn = true;
 		}
 		else {
 			combat.npcAttack(rand() % 101);
 		}
 	}
-
 }
 
 void Skills::heal() {
