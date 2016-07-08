@@ -13,11 +13,11 @@ public:
 	int& playerAtt = classAtt;
 	int& playerHp = classHp;
 	int& playerMp = classMp;
+	int& playerDef = classDef;
 	int maxHp;
 	int maxMp;
-	int& playerDef = classDef;
 	int classNum;
-	int xpForLevel = 50;
+	int xpForLevel = 20;
 	int totalXp;
 	int playerLevel = 1;
 	void chooseClass(int numClass);

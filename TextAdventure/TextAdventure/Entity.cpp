@@ -62,7 +62,7 @@ void Entity::pit() {
 
 void Entity::encounter(int i) {
 	npc.setStats(i);
-	std::cout << "You have encounterd " << npc.npcName << "\n";
+	std::cout << "You have encounterd a " << npc.npcName << "\n";
 	combat.nextTurn();
 }
 

@@ -7,6 +7,10 @@
 #include <iostream>
 #include <map>
 
+/**
+	TODO: NPC SKILLS
+**/
+
 class Goblin : public NPC {
 public:
 	int goblinMaxHp = 40;
@@ -19,9 +23,10 @@ public:
 
 class Orc : public NPC {
 public:
-	int orcHp = 0;
-	int orcAtt = 0;
-	int OrcDef = 0;
+	int orcMaxHp = 80;
+	int orcHp = 80;
+	int orcAtt = 8;
+	int orcDef = 4;
 	int xpGiven = 20;
 	std::string orcName = "Orc";
 };
@@ -45,12 +50,17 @@ public:
 };
 
 Goblin goblin;
+Orc orc;
 extern Classes gameClasses;
 extern CombatHandler combat;
 extern Entity misc;
 
 NPC::NPC()
 {
+}
+
+NPC::NPC(int i) {
+
 }
 
 
@@ -69,6 +79,7 @@ void NPC::setStats(int i) {
 void NPC::setHp(int i) {
 	std::map<int, int> statsHp;
 	statsHp[0] = goblin.goblinMaxHp;
+	statsHp[1] = orc.orcMaxHp;
 
 	npcMaxHp = statsHp[i];
 	npcHp = statsHp[i];
@@ -77,6 +88,7 @@ void NPC::setHp(int i) {
 void NPC::setAtt(int i) {
 	std::map<int, int> statsAtt;
 	statsAtt[0] = goblin.goblinAtt;
+	statsAtt[1] = orc.orcAtt;
 
 	npcAtt = statsAtt[i];
 }
@@ -84,6 +96,7 @@ void NPC::setAtt(int i) {
 void NPC::setDef(int i) {
 	std::map<int, int> statsDef;
 	statsDef[0] = goblin.goblinDef;
+	statsDef[1] = orc.orcDef;
 
 	npcDef = statsDef[i];
 }
@@ -91,6 +104,7 @@ void NPC::setDef(int i) {
 void NPC::setName(int i) {
 	std::map<int, std::string> statsName;
 	statsName[0] = goblin.goblinName;
+	statsName[1] = orc.orcName;
 
 	npcName = statsName[i];
 }
@@ -98,6 +112,7 @@ void NPC::setName(int i) {
 void NPC::setXpGiven(int i) {
 	std::map<int, int> statsXp;
 	statsXp[0] = goblin.xpGiven;
+	statsXp[1] = orc.xpGiven;
 
 	npcXpGiven = statsXp[i];
 }

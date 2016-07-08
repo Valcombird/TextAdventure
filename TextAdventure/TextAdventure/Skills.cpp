@@ -32,10 +32,10 @@ void Skills::strike() {
 		if (combat.playerTurn == true) {
 			if (gameClasses.playerMp >= 3) {
 				gameClasses.playerMp -= 3;
-				combat.playerDmg = rand() % (gameClasses.playerAtt * 2 + 20);
+				combat.playerDmg = gameClasses.playerAtt + rand() % (gameClasses.playerAtt * 2);
 				npc.npcHp -= combat.playerDmg;
 				std::cout << "You use strike and deal " << combat.playerDmg << " damage\n";
-				std::cout << "The " << npc.npcName << " has " << npc.npcHp << " left\n";
+				std::cout << "The " << npc.npcName << " has " << npc.npcHp << " HP left\n";
 				std::cout << "You have " << gameClasses.playerMp << " MP left.\n";
 				combat.playerTurn = false;
 				combat.nextTurn();

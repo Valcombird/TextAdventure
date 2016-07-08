@@ -4,14 +4,15 @@ class NPC
 {
 public:
 	NPC();
+	NPC(int i);
 	~NPC();
-	NPC(int hp, int att, int def, std::string name, int xpGiven, int playerLevel);
 	int npcHp;
 	int npcMaxHp;
 	int npcAtt;
 	int npcDef;
 	int npcXpGiven;
 	int playerLevel;
+	int totalNpcs;
 	std::string npcName;
 	void displayInfo();
 	void setStats(int i);

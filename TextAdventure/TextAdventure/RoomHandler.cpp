@@ -3,6 +3,7 @@
 #include "Entity.h"
 #include "DoorHandler.h"
 #include "Pathing.h"
+#include "NPC.h"
 
 #include <iostream>
 #include <string>
@@ -12,6 +13,7 @@
 DoorHandler door;
 extern Entity misc;
 Pathing path;
+NPC npc;
 
 RoomHandler::RoomHandler()
 {
@@ -57,7 +59,7 @@ void RoomHandler::moveOn(int i) {
 		door.door();
 		break;
 	case 3: //random enemy encounter
-		misc.encounter(rand() % 1);
+		misc.encounter(rand() % 2);
 		break;
 	case 4: //locked door
 		break;

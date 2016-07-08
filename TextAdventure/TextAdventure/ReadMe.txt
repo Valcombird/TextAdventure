@@ -1,5 +1,18 @@
 Seeing how much I can do in C++
 
+7/8
+Combat
+	Fiddled with formulas
+		Now it's player/npc attack - .1 of npc/player def for regular attacks
+		Then 0.5 for critical hits
+	Fixed Strike up more so it deals more damage more often
+NPCs
+	Added orc encounter fully
+Classes
+	Tweaked level up to add MP per level
+	Fixed the dialogue more
+	Lowered amount of xp to level up all around
+
 7/7
 Skills System
 	Skill menu working

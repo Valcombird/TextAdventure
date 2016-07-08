@@ -50,32 +50,29 @@ void CombatHandler::nextTurn() {
 
 void CombatHandler::playerAttack(int i) {
 	srand(static_cast<unsigned int>(time(NULL)));
-	if (npc.npcDef >= gameClasses.playerAtt) {
-		npc.npcHp -= 2;
-		std::cout << "You hit the " << npc.npcName << " for 2 damage\n";
-		std::cout << "The " << npc.npcName << " has " << npc.npcHp << " HP\n";
-		playerTurn = false;
-		nextTurn();
-	}
-	else {
-		if (gameClasses.name == "Warrior" && i >= 90) {
-			playerDmg = rand() % (gameClasses.playerAtt * 2);
-			npc.npcHp -= playerDmg;
-			std::cout << "You critically hit the " << npc.npcName << " for " << playerDmg << " damage!\n";
-			std::cout << "The " << npc.npcName << " has " << npc.npcHp << " HP\n";
-			playerTurn = false;
-			nextTurn();
-		}
-		else if (gameClasses.name == "Archer" && i >= 85) {
-			playerDmg = rand() % (gameClasses.playerAtt * 2);
-			npc.npcHp -= playerDmg;
-			std::cout << "You critically hit the " << npc.npcName << " for " << playerDmg << " damage!\n";
-			std::cout << "The " << npc.npcName << " has " << npc.npcHp << " HP\n";
+	if (i >= 90) {
+		playerDmg = (gameClasses.playerAtt + rand() % (gameClasses.playerAtt * 2)) - (npc.npcDef * .05);
+		if (playerDmg <= 0) {
+			std::cout << "You dealt no damage!" << "\n";
 			playerTurn = false;
 			nextTurn();
 		}
 		else {
-			playerDmg = rand() % (gameClasses.playerAtt + 1);
+			npc.npcHp -= playerDmg;
+			std::cout << "You critically hit the " << npc.npcName << " for " << playerDmg << " damage!\n";
+			std::cout << "The " << npc.npcName << " has " << npc.npcHp << " HP\n";
+			playerTurn = false;
+			nextTurn();
+		}
+	}
+	else {
+		playerDmg = rand() % (gameClasses.playerAtt + 5) - (npc.npcDef * .1);
+		if (playerDmg <= 0) {
+			std::cout << "You dealt no damage!" << "\n";
+			playerTurn = false;
+			nextTurn();
+		}
+		else {
 			npc.npcHp -= playerDmg;
 			std::cout << "You hit the " << npc.npcName << " for " << playerDmg << " damage\n";
 			std::cout << "The " << npc.npcName << " has " << npc.npcHp << " HP\n";
@@ -88,32 +85,38 @@ void CombatHandler::playerAttack(int i) {
 void CombatHandler::npcAttack(int i) {
 	srand(static_cast<unsigned int>(time(NULL)));
 	if (i >= 10) {
-		/*if (gameClasses.playerDef >= npc.npcAtt) {
-			gameClasses.playerHp -= 2;
-			std::cout << npc.npcName << " hit you for 2 damage" << "\n";
-			std::cout << "You now have " << gameClasses.playerHp << "\n";
-			npcTurn = false;
-			playerTurn = true;
-			nextTurn();
-		}*/
-		//else {
-			if (i >= 85) {
-				npcDmg = rand() % (npc.npcAtt * 2);
+		if (i >= 90) {
+			npcDmg = (npc.npcAtt +  rand() % (npc.npcAtt * 2)) - (gameClasses.playerDef * .05);
+			if (npcDmg <= 0) {
+				npcDmg = 0;
+				std::cout << "They dealt no damage!" << "\n";
+				playerTurn = true;
+				nextTurn();
+			}
+			else {
 				gameClasses.playerHp -= npcDmg;
 				std::cout << npc.npcName << " has hit hit you for a critical hit dealing " << npcDmg << " damage!\n";
 				std::cout << "You now have " << gameClasses.playerHp << " HP\n";
 				playerTurn = true;
 				nextTurn();
 			}
+		}
+		else {
+			npcDmg = (rand() % npc.npcAtt) - (gameClasses.playerDef * .1);
+			if (npcDmg <= 0) {
+				npcDmg = 0;
+				std::cout << "They dealt no damage!" << "\n";
+				playerTurn = true;
+				nextTurn();
+			}
 			else {
-				npcDmg = rand() % npc.npcAtt;
 				gameClasses.playerHp -= npcDmg;
 				std::cout << npc.npcName << " hit you for " << npcDmg << " damage\n";
 				std::cout << "You now have " << gameClasses.playerHp << " HP\n";
 				playerTurn = true;
 				nextTurn();
 			}
-		//}
+		}
 	}
 	else {
 		skills.combatHeal();
