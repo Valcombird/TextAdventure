@@ -1,10 +1,10 @@
 #pragma once
 #include <string>
+#include <vector>
 class NPC
 {
 public:
 	NPC();
-	NPC(int i);
 	~NPC();
 	int npcHp;
 	int npcMaxHp;
@@ -14,6 +14,11 @@ public:
 	int playerLevel;
 	int totalNpcs;
 	std::string npcName;
+	std::vector<std::string> npcNameHolder;
+	std::vector<int> npcAttHolder;
+	std::vector<int> npcDefHolder;
+	std::vector<int> npcXpGivenHolder;
+	std::vector<int> npcHpHolder;
 	void displayInfo();
 	void setStats(int i);
 	void setHp(int i);

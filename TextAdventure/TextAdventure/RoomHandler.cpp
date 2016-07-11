@@ -13,7 +13,7 @@
 DoorHandler door;
 extern Entity misc;
 Pathing path;
-NPC npc;
+extern NPC npc;
 
 RoomHandler::RoomHandler()
 {

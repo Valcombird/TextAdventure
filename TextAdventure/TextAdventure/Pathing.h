@@ -5,11 +5,9 @@ class Pathing
 public:
 	Pathing();
 	~Pathing();
-	void chosenPath(int path);
-	void chosenPath(int path, int trapPercent);
-	void choosePath(int i);
-	void choosePath2(int i);
+	int dungeonNumber;
 	std::string theAnswer;
+	void chosenPath(int path, int trapPercent);
 	void pathQuestion();
 	void pathQuestion2();
 };

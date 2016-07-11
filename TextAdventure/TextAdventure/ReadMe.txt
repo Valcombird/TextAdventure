@@ -1,5 +1,11 @@
 Seeing how much I can do in C++
 
+7/11
+NPCs
+	Overhaul of NPC system
+Pathing
+	Added variable for future number of rooms in a dungeon
+
 7/8
 Combat
 	Fiddled with formulas
