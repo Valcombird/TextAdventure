@@ -1,4 +1,15 @@
 ﻿  TextAdventure.cpp
+  Pathing.cpp
+  NPC.cpp
+  Generating Code...
+  Compiling...
+  Skills.cpp
+  RoomHandler.cpp
   Entity.cpp
+  CombatHandler.cpp
+c:\users\chaotic\documents\github\textadventure\textadventure\textadventure\combathandler.cpp(54): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\chaotic\documents\github\textadventure\textadventure\textadventure\combathandler.cpp(69): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\chaotic\documents\github\textadventure\textadventure\textadventure\combathandler.cpp(89): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\chaotic\documents\github\textadventure\textadventure\textadventure\combathandler.cpp(105): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
   Generating Code...
   TextAdventure.vcxproj -> C:\Users\Chaotic\Documents\GitHub\TextAdventure\TextAdventure\Debug\TextAdventure.exe

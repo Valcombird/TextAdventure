@@ -1,5 +1,9 @@
 Seeing how much I can do in C++
 
+7/12
+NPCs
+	Made loadNPCs function to handle loading instead of it being called everytime setStats is called
+
 7/11
 NPCs
 	Overhaul of NPC system

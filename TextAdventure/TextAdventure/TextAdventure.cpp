@@ -15,6 +15,7 @@ extern NPC npc;
 
 int main()
 {
+	npc.loadNPCs();
 	gameClasses.theQuestion();
 	return 0;
 }
