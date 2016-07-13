@@ -59,7 +59,7 @@ void RoomHandler::moveOn(int i) {
 		door.door();
 		break;
 	case 3: //random enemy encounter
-		misc.encounter(rand() % 2);
+		misc.encounter(rand() % 3);
 		break;
 	case 4: //locked door
 		break;

@@ -8,7 +8,7 @@
 #include <iostream>
 #include <time.h>
 
-NPC npc;
+extern NPC npc;
 extern Classes gameClasses;
 Skills skills;
 extern Entity misc;
@@ -39,8 +39,12 @@ void CombatHandler::nextTurn() {
 				nextTurn();
 			}
 		}
-		else
+		else if (rand() % 101 <= 20) {
+			npc.npcSkillPicker(npc.npcNum);
+		}
+		else {
 			npcAttack(rand() % 101);
+		}
 	}
 	else if (gameClasses.playerHp <= 0)
 		misc.death();
@@ -84,44 +88,36 @@ void CombatHandler::playerAttack(int i) {
 
 void CombatHandler::npcAttack(int i) {
 	srand(static_cast<unsigned int>(time(NULL)));
-	if (i >= 10) {
-		if (i >= 90) {
-			npcDmg = (npc.npcAtt +  rand() % (npc.npcAtt * 2)) - (gameClasses.playerDef * .05);
-			if (npcDmg <= 0) {
-				npcDmg = 0;
-				std::cout << "They dealt no damage!" << "\n";
-				playerTurn = true;
-				nextTurn();
-			}
-			else {
-				gameClasses.playerHp -= npcDmg;
-				std::cout << npc.npcName << " has hit hit you for a critical hit dealing " << npcDmg << " damage!\n";
-				std::cout << "You now have " << gameClasses.playerHp << " HP\n";
-				playerTurn = true;
-				nextTurn();
-			}
+	if (i >= 90) {
+		npcDmg = (npc.npcAtt +  rand() % (npc.npcAtt * 2)) - (gameClasses.playerDef * .05);
+		if (npcDmg <= 0) {
+			std::cout << "They dealt no damage!" << "\n";
+			playerTurn = true;
+			nextTurn();
 		}
 		else {
-			npcDmg = (rand() % npc.npcAtt) - (gameClasses.playerDef * .1);
-			if (npcDmg <= 0) {
-				npcDmg = 0;
-				std::cout << "They dealt no damage!" << "\n";
-				playerTurn = true;
-				nextTurn();
-			}
-			else {
-				gameClasses.playerHp -= npcDmg;
-				std::cout << npc.npcName << " hit you for " << npcDmg << " damage\n";
-				std::cout << "You now have " << gameClasses.playerHp << " HP\n";
-				playerTurn = true;
-				nextTurn();
-			}
+			gameClasses.playerHp -= npcDmg;
+			std::cout << npc.npcName << " has hit hit you for a critical hit dealing " << npcDmg << " damage!\n";
+			std::cout << "You now have " << gameClasses.playerHp << " HP\n";
+			playerTurn = true;
+			nextTurn();
 		}
 	}
 	else {
-		skills.combatHeal();
-		playerTurn = true;
-		nextTurn();
+		npcDmg = (rand() % npc.npcAtt) - (gameClasses.playerDef * .1);
+		if (npcDmg <= 0) {
+			npcDmg = 0;
+			std::cout << "They dealt no damage!" << "\n";
+			playerTurn = true;
+			nextTurn();
+		}
+		else {
+			gameClasses.playerHp -= npcDmg;
+			std::cout << npc.npcName << " hit you for " << npcDmg << " damage\n";
+			std::cout << "You now have " << gameClasses.playerHp << " HP\n";
+			playerTurn = true;
+			nextTurn();
+		}
 	}
 }
 

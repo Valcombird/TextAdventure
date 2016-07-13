@@ -9,7 +9,7 @@
 #include <iostream>
 
 Classes gameClasses;
-CombatHandler combat;
+extern CombatHandler combat;
 Entity misc;
 extern NPC npc;
 
@@ -66,32 +66,25 @@ void Skills::protect() {
 
 void Skills::combatHeal() {
 	if (combat.playerTurn == true) {
-		if (gameClasses.playerHp != gameClasses.maxHp && gameClasses.playerMp >= 5) {
-			gameClasses.playerHp += 15;
-			gameClasses.playerMp -= 5;
-			if (gameClasses.playerHp >= gameClasses.maxHp)
-				gameClasses.playerHp = gameClasses.maxHp;
-			std::cout << "You now have " << gameClasses.playerHp << " hp\n";
-			combat.playerTurn = false;
-			combat.nextTurn();
+		if (gameClasses.playerHp != gameClasses.maxHp) {
+			if (gameClasses.playerMp >= 5) {
+				gameClasses.playerHp += 15;
+				gameClasses.playerMp -= 5;
+				if (gameClasses.playerHp >= gameClasses.maxHp)
+					gameClasses.playerHp = gameClasses.maxHp;
+				std::cout << "You now have " << gameClasses.playerHp << " hp\n";
+				combat.playerTurn = false;
+				combat.nextTurn();
+			}
+			else {
+				std::cout << "You don't have enough MP!" << "\n";
+				combat.nextTurn();
+			}
 		}
 		else {
 			std::cout << "You already have full hp!";
 			combat.nextTurn();
 		}		
-	}
-	else if (combat.playerTurn == false) {
-		if (npc.npcHp != npc.npcMaxHp) {
-			npc.npcHp += 10;
-			if (npc.npcHp >= npc.npcMaxHp)
-				npc.npcHp = npc.npcMaxHp;
-			std::cout << "The " << npc.npcName << " healed for 10 HP!" << "\n";
-			std::cout << npc.npcName << " now has " << npc.npcHp << " HP\n";
-			combat.playerTurn = true;
-		}
-		else {
-			combat.npcAttack(rand() % 101);
-		}
 	}
 }
 

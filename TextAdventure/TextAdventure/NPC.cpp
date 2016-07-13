@@ -9,6 +9,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <time.h>
 //#include <map>
 
 /**
@@ -119,10 +120,16 @@ void NPC::loadNPCs() {
 }
 
 void NPC::npcSkillPicker(int i) {
+	srand(static_cast<unsigned int>(time(NULL)));
 	switch (npcNumber[i]) {
-	case 0:
 	case 1:
-		npcSkills.npcHeal();
+		if (rand() % 101 >= 51)
+			npcSkills.npcHeal();
+		else
+			npcSkills.npcSmash();
+		break;
+	default:
+		combat.npcAttack(rand() % 101);
 		break;
 	}
 }

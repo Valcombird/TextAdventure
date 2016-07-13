@@ -5,5 +5,6 @@ public:
 	NPCSkills();
 	~NPCSkills();
 	void npcHeal();
+	void npcSmash();
 };
 

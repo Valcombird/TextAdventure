@@ -63,11 +63,16 @@ void Classes::chooseClass(int numClass) {
 	classNum = numClass;
 	switch (numClass) {
 	case 0: //warrior
-		maxHp = 100;
-		classHp = 100;
-		maxMp = 20;
-		classMp = 20;
-		classAtt = 6;
+		//maxHp = 100;
+		maxHp = 9999;
+		//classHp = 100;
+		classHp = 9999;
+		//maxMp = 20;
+		maxMp = 9999;
+		//classMp = 20;
+		classMp = 9999;
+		classAtt = 9999;
+		//classAtt = 6;
 		classDef = 10;
 		name = "Warrior";
 		hasStrike = true;
