@@ -1,0 +1,3 @@
+//id	name	hp	attack	defence	mp	playerLevelReq
+0	Health_Potion	0	0	0	0	1
+1	Mana_Potion	0	0	0	0	1
