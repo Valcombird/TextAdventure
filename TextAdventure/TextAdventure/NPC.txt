@@ -1,0 +1,4 @@
+//NPCNumber	Name	Hp	Attack	Defence	XpGiven	
+0	Goblin	40	5	2	10
+1	Orc	80	8	4	20
+2	Chicken	20	2	1	5

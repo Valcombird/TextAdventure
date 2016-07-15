@@ -1,5 +1,22 @@
 Seeing how much I can do in C++
 
+7/13
+NPCs
+	Start of skill system
+	Took out heal for goblin and now only used for Orc
+	Skill for orc similar to Warrior called smash
+	Added chicken npc
+
+7/12
+NPCs
+	Made loadNPCs function to handle loading instead of it being called everytime setStats is called
+
+7/11
+NPCs
+	Overhaul of NPC system
+Pathing
+	Added variable for future number of rooms in a dungeon
+
 7/8
 Combat
 	Fiddled with formulas

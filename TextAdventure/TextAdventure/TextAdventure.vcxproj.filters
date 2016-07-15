@@ -18,9 +18,15 @@
     <Filter Include="Source Files\World">
       <UniqueIdentifier>{53a05189-4f3f-483e-9f04-c0da786cd7d4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Config Files">
+      <UniqueIdentifier>{869000ea-559f-4249-88b8-c40908b7413b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
+    <Text Include="NPC.txt">
+      <Filter>Config Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -59,6 +65,9 @@
     <ClInclude Include="Skills.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="NPCSkills.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -93,6 +102,9 @@
     </ClCompile>
     <ClCompile Include="Skills.cpp">
       <Filter>Source Files\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="NPCSkills.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
