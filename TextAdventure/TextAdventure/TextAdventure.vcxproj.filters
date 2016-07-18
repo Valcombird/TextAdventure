@@ -107,7 +107,7 @@
       <Filter>Source Files\Player</Filter>
     </ClCompile>
     <ClCompile Include="NPCSkills.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Entity</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

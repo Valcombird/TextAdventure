@@ -22,9 +22,12 @@ public:
 	int itemHP;
 	int itemLevelReq;
 	std::string itemName;
+	std::string potName;
 	void equipItem(int newItem);
 	void unequipItem(int oldItem);
-	void drinkPotion();
+	void drinkPotion(int potion);
+	void drinkPotionMenu();
+	void checkInventory();
 	void loadItems();
 	void findItem(int itemNum);
 	void dropItem(int itemNum);

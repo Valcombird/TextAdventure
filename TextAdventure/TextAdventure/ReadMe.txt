@@ -1,5 +1,17 @@
 Seeing how much I can do in C++
 
+7/18
+Items
+	Check inventory somewhat working
+	Abiity to drink potions
+	Drink potion menu
+
+7/15
+Items
+	Item loader setup (Replica of NPC with additions of course)
+	Setup basic functions that will be needed
+	Setup most of needed variables probably need more
+
 7/13
 NPCs
 	Start of skill system

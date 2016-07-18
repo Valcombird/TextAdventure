@@ -1,2 +1,9 @@
-﻿  ItemHandler.cpp
+﻿  NPC.cpp
+  ItemHandler.cpp
+c:\users\chaotic\documents\github\textadventure\textadventure\textadventure\itemhandler.cpp(89): warning C4018: '<': signed/unsigned mismatch
+  Entity.cpp
+  Generating Code...
+  Compiling...
+  TextAdventure.cpp
+  Generating Code...
   TextAdventure.vcxproj -> C:\Users\Chaotic\Documents\GitHub\TextAdventure\TextAdventure\Debug\TextAdventure.exe
