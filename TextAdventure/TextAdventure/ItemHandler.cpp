@@ -7,6 +7,7 @@
 #include <sstream>
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include <string>
 
 extern Entity misc;
@@ -25,13 +26,21 @@ void ItemHandler::equipItem(int itemType, int newItem) {
 	switch (itemType) {
 	case 1: //weapon
 		if (gameClasses.playerLevel >= itemLevelReqHolder[newItem]) {
-			unequipItem(itemType, weaponEquipped);
-			weaponEquipped = newItem;
-			deleteItem(newItem);
-			gameClasses.playerAtt += itemAttHolder[newItem];
-			gameClasses.playerDef += itemDefHolder[newItem];
-			gameClasses.playerHp += itemHPHolder[newItem];
-			gameClasses.maxMp += itemMPHolder[newItem];
+			if (itemSlotHolder[newItem] == WEAPON_SLOT) {
+				unequipItem(itemType, weaponEquipped);
+				weaponEquipped = newItem;
+				deleteItem(newItem);
+				gameClasses.playerAtt += itemAttHolder[newItem];
+				gameClasses.playerDef += itemDefHolder[newItem];
+				gameClasses.playerHp += itemHPHolder[newItem];
+				gameClasses.maxMp += itemMPHolder[newItem];
+				std::cout << "You equipped the " << itemNameHolder[newItem] << ".\n";
+				misc.takeAction();
+			}
+			else {
+				std::cout << "That item can't go in that slot!" << "\n";
+				equipItemDialogue();
+			}
 		}
 		else {
 			std::cout << "You're level is too low to wear that!" << "\n";
@@ -39,13 +48,21 @@ void ItemHandler::equipItem(int itemType, int newItem) {
 		break;
 	case 2: //helm
 		if (gameClasses.playerLevel >= itemLevelReqHolder[newItem]) {
-			unequipItem(itemType, helmEquipped);
-			helmEquipped = newItem;
-			deleteItem(newItem);
-			gameClasses.playerAtt += itemAttHolder[newItem];
-			gameClasses.playerDef += itemDefHolder[newItem];
-			gameClasses.playerHp += itemHPHolder[newItem];
-			gameClasses.maxMp += itemMPHolder[newItem];
+			if (itemSlotHolder[newItem] == HELM_SLOT) {
+				unequipItem(itemType, helmEquipped);
+				helmEquipped = newItem;
+				deleteItem(newItem);
+				gameClasses.playerAtt += itemAttHolder[newItem];
+				gameClasses.playerDef += itemDefHolder[newItem];
+				gameClasses.playerHp += itemHPHolder[newItem];
+				gameClasses.maxMp += itemMPHolder[newItem];
+				std::cout << "You equipped the " << itemNameHolder[newItem] << ".\n";
+				misc.takeAction();
+			}
+			else {
+				std::cout << "That item can't go in that slot!" << "\n";
+				equipItemDialogue();
+			}
 		}
 		else {
 			std::cout << "You're level is too low to wear that!" << "\n";
@@ -53,13 +70,21 @@ void ItemHandler::equipItem(int itemType, int newItem) {
 		break;
 	case 3: //body
 		if (gameClasses.playerLevel >= itemLevelReqHolder[newItem]) {
-			unequipItem(itemType, bodyEquipped);
-			bodyEquipped = newItem;
-			deleteItem(newItem);
-			gameClasses.playerAtt += itemAttHolder[newItem];
-			gameClasses.playerDef += itemDefHolder[newItem];
-			gameClasses.playerHp += itemHPHolder[newItem];
-			gameClasses.maxMp += itemMPHolder[newItem];
+			if (itemSlotHolder[newItem] == BODY_SLOT) {
+				unequipItem(itemType, bodyEquipped);
+				bodyEquipped = newItem;
+				deleteItem(newItem);
+				gameClasses.playerAtt += itemAttHolder[newItem];
+				gameClasses.playerDef += itemDefHolder[newItem];
+				gameClasses.playerHp += itemHPHolder[newItem];
+				gameClasses.maxMp += itemMPHolder[newItem];
+				std::cout << "You equipped the " << itemNameHolder[newItem] << ".\n";
+				misc.takeAction();
+			}
+			else {
+				std::cout << "That item can't go in that slot!" << "\n";
+				equipItemDialogue();
+			}
 		}
 		else {
 			std::cout << "You're level is too low to wear that!" << "\n";
@@ -67,13 +92,21 @@ void ItemHandler::equipItem(int itemType, int newItem) {
 		break;
 	case 4: //legs
 		if (gameClasses.playerLevel >= itemLevelReqHolder[newItem]) {
-			unequipItem(itemType, legsEquipped);
-			legsEquipped = newItem;
-			deleteItem(newItem);
-			gameClasses.playerAtt += itemAttHolder[newItem];
-			gameClasses.playerDef += itemDefHolder[newItem];
-			gameClasses.playerHp += itemHPHolder[newItem];
-			gameClasses.maxMp += itemMPHolder[newItem];
+			if (itemSlotHolder[newItem] == LEGS_SLOT) {
+				unequipItem(itemType, legsEquipped);
+				legsEquipped = newItem;
+				deleteItem(newItem);
+				gameClasses.playerAtt += itemAttHolder[newItem];
+				gameClasses.playerDef += itemDefHolder[newItem];
+				gameClasses.playerHp += itemHPHolder[newItem];
+				gameClasses.maxMp += itemMPHolder[newItem];
+				std::cout << "You equipped the " << itemNameHolder[newItem] << ".\n";
+				misc.takeAction();
+			}
+			else {
+				std::cout << "That item can't go in that slot!" << "\n";
+				equipItemDialogue();
+			}
 		}
 		else {
 			std::cout << "You're level is too low to wear that!" << "\n";
@@ -81,13 +114,21 @@ void ItemHandler::equipItem(int itemType, int newItem) {
 		break;
 	case 5: //necklace
 		if (gameClasses.playerLevel >= itemLevelReqHolder[newItem]) {
-			unequipItem(itemType, necklaceEquipped);
-			necklaceEquipped = newItem;
-			deleteItem(newItem);
-			gameClasses.playerAtt += itemAttHolder[newItem];
-			gameClasses.playerDef += itemDefHolder[newItem];
-			gameClasses.playerHp += itemHPHolder[newItem];
-			gameClasses.maxMp += itemMPHolder[newItem];
+			if (itemSlotHolder[newItem] == NECK_SLOT) {
+				unequipItem(itemType, necklaceEquipped);
+				necklaceEquipped = newItem;
+				deleteItem(newItem);
+				gameClasses.playerAtt += itemAttHolder[newItem];
+				gameClasses.playerDef += itemDefHolder[newItem];
+				gameClasses.playerHp += itemHPHolder[newItem];
+				gameClasses.maxMp += itemMPHolder[newItem];
+				std::cout << "You equipped the " << itemNameHolder[newItem] << ".\n";
+				misc.takeAction();
+			}
+			else {
+				std::cout << "That item can't go in that slot!" << "\n";
+				equipItemDialogue();
+			}
 		}
 		else {
 			std::cout << "You're level is too low to wear that!" << "\n";
@@ -95,13 +136,21 @@ void ItemHandler::equipItem(int itemType, int newItem) {
 		break;
 	case 6: //shield
 		if (gameClasses.playerLevel >= itemLevelReqHolder[newItem]) {
-			unequipItem(itemType, shieldEquipped);
-			shieldEquipped = newItem;
-			deleteItem(newItem);
-			gameClasses.playerAtt += itemAttHolder[newItem];
-			gameClasses.playerDef += itemDefHolder[newItem];
-			gameClasses.playerHp += itemHPHolder[newItem];
-			gameClasses.maxMp += itemMPHolder[newItem];
+			if (itemSlotHolder[newItem] == SHIELD_SLOT) {
+				unequipItem(itemType, shieldEquipped);
+				shieldEquipped = newItem;
+				deleteItem(newItem);
+				gameClasses.playerAtt += itemAttHolder[newItem];
+				gameClasses.playerDef += itemDefHolder[newItem];
+				gameClasses.playerHp += itemHPHolder[newItem];
+				gameClasses.maxMp += itemMPHolder[newItem];
+				std::cout << "You equipped the " << itemNameHolder[newItem] << ".\n";
+				misc.takeAction();
+			}
+			else {
+				std::cout << "That item can't go in that slot!" << "\n";
+				equipItemDialogue();
+			}
 		}
 		else {
 			std::cout << "You're level is too low to wear that!" << "\n";
@@ -226,9 +275,8 @@ void ItemHandler::drinkPotionMenu() {
 void ItemHandler::checkInventory() {
 	std::cout << "HP Potions: " << hpPotCount << "\n";
 	std::cout << "MP Potions: " << mpPotCount << "\n";
-	inventory.push_back(2);
-	for (int i = 0; i < inventory.size(); i++)
-		std::cout << itemNameHolder[inventory[i]] << "\n";
+	for (unsigned int i = 0; i < inventory.size(); i++)
+		std::cout << itemNameHolder[inventory[i]] << " ID: " << itemIDHolder[inventory[i]] << "\n";
 	std::cout << "Equip an item, unequip an item, or go back and take an action?" << "\n";
 	getline(std::cin, theAnswer);
 	if (theAnswer == "Equip an item" || theAnswer == "equip an item") equipItemDialogue();
@@ -240,6 +288,60 @@ void ItemHandler::checkInventory() {
 	}
 }
 
+void ItemHandler::equipItemDialogue() {
+	std::cout << "Which slot would you like to equip? (Use weapon, helm, body, legs, necklace, shield)" << "\n";
+	getline(std::cin, theAnswer);
+	if (theAnswer == "Weapon" || theAnswer == "weapon") equipItemSlot(1);
+	if (theAnswer == "helm" || theAnswer == "Helm") equipItemSlot(2);
+	if (theAnswer == "body" || theAnswer == "Body") equipItemSlot(3);
+	if (theAnswer == "legs" || theAnswer == "Legs") equipItemSlot(4);
+	if (theAnswer == "necklace" || theAnswer == "Necklace") equipItemSlot(5);
+	if (theAnswer == "shield" || theAnswer == "Shield") equipItemSlot(6);
+	else {
+		std::cout << "Something went wrong" << "\n";
+		equipItemDialogue();
+	}
+}
+
+void ItemHandler::equipItemSlot(int itemEquipSlot) {
+	switch (itemEquipSlot) {
+	case 1:
+		std::cout << "Which weapon would you like to equip? (Use ID)" << "\n";
+		std::cin >> itemEquipNum;
+		equipItem(itemEquipSlot, itemEquipNum);
+		break;
+	case 2:
+		std::cout << "Which helm would you like to equip? (Use ID)" << "\n";
+		std::cin >> itemEquipNum;
+		equipItem(itemEquipSlot, itemEquipNum);
+		break;
+	case 3:
+		std::cout << "Which body would you like to equip? (Use ID)" << "\n";
+		std::cin >> itemEquipNum;
+		equipItem(itemEquipSlot, itemEquipNum);
+		break;
+	case 4:
+		std::cout << "Which legs would you like to equip? (Use ID)" << "\n";
+		std::cin >> itemEquipNum;
+		equipItem(itemEquipSlot, itemEquipNum);
+		break;
+	case 5:
+		std::cout << "Which necklace would you like to equip? (Use ID)" << "\n";
+		std::cin >> itemEquipNum;
+		equipItem(itemEquipSlot, itemEquipNum);
+		break;
+	case 6:
+		std::cout << "Which shield would you like to equip? (Use ID)" << "\n";
+		std::cin >> itemEquipNum;
+		equipItem(itemEquipSlot, itemEquipNum);
+		break;
+	}
+}
+
+void ItemHandler::unequipItemDialogue() {
+
+}
+
 void ItemHandler::loadItems() {
 	std::ifstream inFile;
 	std::string line;
@@ -247,8 +349,8 @@ void ItemHandler::loadItems() {
 	while (std::getline(inFile, line)) {
 		std::stringstream ss(line);
 		std::string name;
-		int num, hp, att, def, mp, levelReq;
-		if (ss >> num >> name >> hp >> att >> def >> mp >> levelReq) {
+		int num, hp, att, def, mp, levelReq, slot;
+		if (ss >> num >> name >> hp >> att >> def >> mp >> levelReq >> slot) {
 			itemIDHolder.push_back(num);
 			itemNameHolder.push_back(name);
 			itemHPHolder.push_back(hp);
@@ -256,8 +358,10 @@ void ItemHandler::loadItems() {
 			itemDefHolder.push_back(def);
 			itemMPHolder.push_back(mp);
 			itemLevelReqHolder.push_back(levelReq);
+			itemSlotHolder.push_back(slot);
 		}
 	}
+	inFile.close();
 }
 
 void ItemHandler::setStats(int itemNum) {
@@ -282,7 +386,7 @@ void ItemHandler::displayStats(int itemNum) {
 }
 
 void ItemHandler::deleteItem(int itemNum) {
-	std::vector<int>::iterator itemPosition = std::find(inventory.begin, inventory.end, itemNum);
+	std::vector<int>::iterator itemPosition = std::find(inventory.begin(), inventory.end(), itemNum);
 	inventory.erase(itemPosition);
 }
 

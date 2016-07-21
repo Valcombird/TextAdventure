@@ -21,6 +21,15 @@ public:
 	int itemMP;
 	int itemHP;
 	int itemLevelReq;
+	int itemEquipNum;
+	int itemEquipSlot;
+	int WEAPON_SLOT = 1;
+	int HELM_SLOT = 2;
+	int BODY_SLOT = 3;
+	int LEGS_SLOT = 4;
+	int NECK_SLOT = 5;
+	int SHIELD_SLOT = 6;
+	static int newItem;
 	std::string itemName;
 	std::string potName;
 	std::string theAnswer;
@@ -37,6 +46,7 @@ public:
 	void setStats(int itemNum);
 	void equipItemDialogue();
 	void unequipItemDialogue();
+	void equipItemSlot(int itemEquipSlot);
 	/*
 		Equipped Items
 	*/
@@ -51,5 +61,7 @@ public:
 	std::vector<int> itemHPHolder;
 	std::vector<int> itemLevelReqHolder;
 	std::vector<std::string> itemNameHolder;
+	std::vector<int> itemSlotHolder; // holds item slots
+	
 };
 

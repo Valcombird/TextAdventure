@@ -4,6 +4,7 @@
 #include "DoorHandler.h"
 #include "Pathing.h"
 #include "NPC.h"
+#include "ItemHandler.h"
 
 #include <iostream>
 #include <string>
@@ -14,6 +15,7 @@ DoorHandler door;
 extern Entity misc;
 Pathing path;
 extern NPC npc;
+extern ItemHandler item;
 
 RoomHandler::RoomHandler()
 {
@@ -29,18 +31,22 @@ void RoomHandler::search(int i) {
 	switch (i) {
 	case 0:
 		std::cout << "You found nothing -- Case 0" << "\n";
+		item.inventory.push_back(3);
 		misc.takeAction();
 		break;
 	case 1:
 		std::cout << "You found something -- Case 1" << "\n";
+		item.inventory.push_back(3);
 		misc.takeAction();
 		break;
 	case 2:
 		std::cout << "You found everything -- Case 2" << "\n";
+		item.inventory.push_back(3);
 		misc.takeAction();
 		break;
 	case 3:
 		std::cout << "You found something -- Case 3" << "\n";
+		item.inventory.push_back(3);
 		misc.takeAction();
 		break;
 	}
@@ -74,7 +80,8 @@ void RoomHandler::room() {
 	if (theAnswer == "Search" || theAnswer == "search")
 		search(rand() % 3);
 	else if (theAnswer == "Move on" || theAnswer == "move on" || theAnswer == "Move On")
-		moveOn(rand() % 4);
+		moveOn(3);
+		//moveOn(rand() % 4);
 	else {
 		std::cout << "Something went wrong" << std::endl;
 		room();

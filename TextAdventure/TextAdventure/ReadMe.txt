@@ -1,5 +1,11 @@
 Seeing how much I can do in C++
 
+7/21 
+Items
+	Can equip items; issues in the issue forum in Git
+	Created vectors to hold item specific slots
+	Fixed equipping so they go in proper slot (so far)
+
 7/20
 Items
 	Basics for item equipping and unequipping
