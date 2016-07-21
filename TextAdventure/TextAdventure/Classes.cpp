@@ -2,6 +2,7 @@
 #include "Classes.h"
 #include "Entity.h"
 #include "Skills.h"
+#include "ItemHandler.h"
 
 #include <iostream>
 #include <string>
@@ -9,6 +10,7 @@
 
 extern Entity misc;
 extern Skills skills;
+extern ItemHandler item;
 
 std::string chosenClass;
 std::string& playerClassName = chosenClass;

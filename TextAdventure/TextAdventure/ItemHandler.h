@@ -23,16 +23,20 @@ public:
 	int itemLevelReq;
 	std::string itemName;
 	std::string potName;
-	void equipItem(int newItem);
-	void unequipItem(int oldItem);
+	std::string theAnswer;
+	void equipItem(int itemType, int newItem);
+	void unequipItem(int itemType, int oldItem);
 	void drinkPotion(int potion);
 	void drinkPotionMenu();
 	void checkInventory();
 	void loadItems();
 	void findItem(int itemNum);
-	void dropItem(int itemNum);
+	//void dropItem(int itemNum);
+	void deleteItem(int itemNum); //deletes item from inventory once equipped
 	void displayStats(int itemNum);
 	void setStats(int itemNum);
+	void equipItemDialogue();
+	void unequipItemDialogue();
 	/*
 		Equipped Items
 	*/

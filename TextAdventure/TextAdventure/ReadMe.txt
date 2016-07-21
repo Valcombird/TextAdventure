@@ -1,5 +1,11 @@
 Seeing how much I can do in C++
 
+7/20
+Items
+	Basics for item equipping and unequipping
+	Delete item function for when item is being equipped
+	Setup for equipping and unequipping dialogue
+
 7/18
 Items
 	Check inventory somewhat working
